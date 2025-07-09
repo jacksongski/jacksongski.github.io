@@ -1,36 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
   <meta charset="UTF-8" />
   <title>Jackson Glisczinski</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="./styles.css" />
-  <body>
-    <nav class="navbar">
-      <a class="navbar_link navbar_link_curr" href="index.html">Home</a>
-      <a class="navbar_link" href="portfolio/portfolio.html">Portfolio</a>
-      <a class="navbar_link" href="bbb/bbb.html">BBB</a>
-      <a class="navbar_link" href="wor6le/wor6le.html">Wor6le</a>
-      <a class="navbar_link" href="gym/gym.html">Gym Tracker</a>
-    </nav>
-    <div class="home">
-      <img id="gitimg" src="./git.png" alt="Github logo" />
-      <div class="home_container">
-        <img
-          id="profileimg"
-          src="./me.jpeg"
-          alt="A picture of Jackson"
-        />
-        <h1>Hi, I'm Jackson</h1>
-        <h2 class="home_description">
-          Take a closer look at some of my GitHub projects <br />
-          and view my profile here
-        </h2>
-        <a class="home_description button" href="https://github.com/jacksongski"
-          >GitHub Profile</a
-        >
-      </div>     
-    </div>
-    <p style="right: 0.3rem; bottom: 0.3rem; position: absolute; opacity: 0.3;"> OCTOCAT® by GITHUB® at github.com</p>
+  <link rel="icon" type="image/gif/png" href="./assets/logo.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" />
+</head>
 
-  </body>
+<body>
+  <div id="navbar">
+    <a href="#container" class="navItems">HOME</a>
+    <a href="#abt" class="navItems">ABOUT</a>
+    <a href="#wrk" class="navItems">WORK</a>
+    <a href="#cntct" class="navItems">CONTACT</a>
+  </div>
+
+  <!-- bars -->
+  <div id="container">
+    <div style="margin: 60px 0">
+      <div class="bars bar2" style="left: 78%"></div>
+      <div class="bars" style="right: 52%"></div>
+      <div style="margin: 24px 100%"></div>
+      <div class="bars bar1" style="left: 60%"></div>
+      <div class="bars bar2" style="right: 68%"></div>
+      <div class="bars" style="left: 52%"></div>
+      <div style="margin: 150px 100%"></div>
+    </div>
+
+    <!-- Home Page -->
+    <div id="home">
+      <div style="
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            align-content: flex-start;
+          ">
+        <h3>Hi, I'm</h3>
+        <h1>JACKSON</h1>
+        <h1 style="animation: moveInRight 1.7s ease-out">GLISCZINSKI</h1>
+        <h4>(glih - shin - skee)</h4>
+      </div>
+
+      <div style="margin: 220px"></div>
+      <div style="text-align: right; align-items: flex-end">
+        <h2>Full Stack Engineer</h2>
+        <h4>with a broad experience in development</h4>
+      </div>
+    </div>
+
+    <!-- bars -->
+    <div style="margin: 120px 0">
+      <div class="bars bar2" style="left: 60%"></div>
+      <div style="margin: 24px 100%"></div>
+      <div class="bars" style="right: 52%"></div>
+      <div style="margin: 30px 100%" id="abt"></div>
+      <div class="bars bar1" style="right: 68%"></div>
+      <div class="bars" style="left: 52%"></div>
+      <div style="margin: 30px 100%"></div>
+      <div class="bars bar2" style="left: 78%"></div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about">
+      <div></div>
+      <h1 style="text-align: right; grid-column-start: 1; grid-column-end: 6">
+        ABOUT
+      </h1>
+      <h3 style="grid-column-start: 1; grid-column-end: 5">
+        <br />
+        <p>
+          I have a passion for designing and improving systems. Development
+          allows me to channel my creativity into building and refining
+          software solutions.
+        </p>
+        <p>
+          I hold a B.A. in Computer Science and Information Science with a
+          certificate in Digital Studies from the University of
+          Wisconsin-Madison. I currently work at U.S. Bank in a rotational
+          program, gaining experience in various areas of software
+          engineering, such as database administration, API development,
+          network automation, and native mobile development. Previously, I
+          interned at Epic Systems in the Computer and Technology Services
+          division, contributing to full-stack internal development projects.
+        </p>
+      </h3>
+      <div style="
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin-left: 40px;
+          ">
+        <img src="./assets/me.jpeg" width="300px" style="grid-column-start: 5; grid-column-end: 6"
+          alt="profile picture of myself" />
+        <div class="overlay"></div>
+      </div>
+      <div style="width: 100%; height: 40px; grid-column-end: 6"></div>
+      <h4 style="grid-column-start: 1; grid-column-end: 6; justify-self: left">
+        Some of my experience:
+        <ul style="columns: 2; list-style-type: circle">
+          <li>HTML/CSS</li>
+          <li>JavaScript</li>
+          <li>Ansible</li>
+          <li>Python</li>
+          <li>Java</li>
+          <li>C#</li>
+          <li>React</li>
+          <li>Vue</li>
+          <li>SQL</li>
+          <li>Docker</li>
+          <li>GitLab</li>
+          <li>Jenkins</li>
+          <li>Kotlin</li>
+          <li>PHP</li>
+          <li>Groovy</li>
+          <li>UniBasic</li>
+          <li>C</li>
+          <li>Kubernetes</li>
+
+        </ul>
+      </h4>
+    </div>
+
+    <!-- bars -->
+    <div style="margin: 120px 0">
+      <div style="margin: 24px 100%"></div>
+      <div class="bars" style="left: 47%"></div>
+      <div style="margin: 30px 100%"></div>
+      <div class="bars bar2" style="right: 68%"></div>
+      <div class="bars bar1" style="left: 62%"></div>
+      <div style="margin: 30px 100%"></div>
+      <div class="bars" style="left: 57%"></div>
+      <div class="bars bar1" style="right: 52%" id="wrk"></div>
+      <div style="margin: 150px 100%"></div>
+    </div>
+
+    <!-- Work Page -->
+    <div id="work">
+      <h1>WORK</h1>
+      <div></div>
+      <a href="./maps.html" class="proj" style="grid-column: 1 / 4">
+        <img src="./assets/epic.jpg" width="100%" height="100%" alt="Epic Systems logo link" />
+        <div class="overlay">
+          <h3 id="overLabel">Epic Maps Project</h3>
+        </div>
+      </a>
+      <a href="./nick.html" class="proj">
+        <img src="./assets/nick.jpg" width="100%" height="100%" alt="UW-Madison Recreation and Wellbeing logo link" />
+        <div class="overlay">
+          <h3 id="overLabel">UW Gym Tracker</h3>
+        </div>
+      </a>
+      <div></div>
+      <a href="./discord.html" class="proj">
+        <img src="./assets/discord.jpg" width="100%" height="100%" alt="Discord logo link" />
+        <div class="overlay">
+          <h3 id="overLabel">NFT Discord Bot</h3>
+        </div>
+      </a>
+      <a class="proj" href="./figma.html">
+        <img src="./assets/figma.png" width="100%" height="100%" alt="Figma logo link" />
+        <div class="overlay">
+          <h3 id="overLabel">Figma App Prototypes</h3>
+        </div>
+      </a>
+      <div></div>
+      <a class="proj" href="./ai.html">
+        <img src="./assets/ai.jpg" width="100%" height="100%" alt="UW AI logo link" />
+        <div class="overlay">
+          <h3 id="overLabel">CS540: Intro to AI</h3>
+        </div>
+      </a>
+
+      <div class="proj" style="
+            grid-column: 1 / 4;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg, #23233a 60%, #181824 100%);
+            border-radius: 16px;
+            box-shadow: #000000 -3px 3px 8px;
+            position: relative;
+            margin-top: 50px;
+          ">
+        <a href="githubProjects/index.html" style="
+              color: #fff;
+              font-size: 2rem;
+              font-family: 'Montserrat', sans-serif;
+              display: flex;
+              align-items: center;
+              gap: 18px;
+              text-decoration: none;
+              font-weight: 400;
+              letter-spacing: 1px;
+              transition: color 0.2s;
+            " onmouseover="this.style.color='#cdcfff'" onmouseout="this.style.color='#fff'">
+          <span>More GitHub Projects</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- bars -->
+    <div style="margin: 120px 0">
+      <div class="bars bar2" style="left: 60%"></div>
+      <div style="margin: 24px 100%"></div>
+      <div class="bars" style="right: 52%"></div>
+      <div style="margin: 30px 100%" id="abt"></div>
+      <div class="bars bar1" style="right: 68%"></div>
+      <div class="bars" style="left: 52%"></div>
+      <div id="cntct" style="margin: 30px 100%"></div>
+      <div class="bars bar2" style="left: 78%"></div>
+      <div style="margin: 200px 100%"></div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact">
+      <h1 style="
+            text-align: right;
+            justify-self: end;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            margin-bottom: 80px;
+          ">
+        CONTACT
+      </h1>
+      <div style="width: 100%">
+        <form action="https://formsubmit.co/jacksongski@icloud.com" method="POST">
+          <div>
+            <label for="name">
+              <h4>Name:</h4>
+            </label>
+            <input type="text" name="name" id="name" required />
+          </div>
+          <br />
+          <div>
+            <label for="email">
+              <h4>Email:</h4>
+            </label>
+            <input type="email" name="email" id="email" required />
+          </div>
+          <br />
+
+          <div>
+            <label for="message">
+              <h4>Message:</h4>
+            </label>
+            <textarea name="message" rows="12" id="message" required></textarea>
+          </div>
+          <br />
+          <br />
+          <div style="text-align: center">
+            <button type="submit">SUBMIT</button>
+          </div>
+        </form>
+      </div>
+      <!-- logos -->
+      <div style="text-align: center" ;>
+        <a href="https://github.com/jacksongski">
+          <i style="margin-top: 0" class="ti ti-brand-github"></i>
+          <h4>GITHUB</h4>
+        </a><a href="https://www.linkedin.com/in/jackson-glisczinski-44764a1a2/">
+          <i class="ti ti-brand-linkedin"></i>
+          <h4>LINKEDIN</h4>
+        </a><a href="./resume.html">
+          <i class="ti ti-file-description"></i>
+          <h4>RESUME</h4>
+        </a><a href="mailto:jacksongski@icloud.com">
+          <i class="ti ti-mail"></i>
+          <h4>EMAIL</h4>
+        </a>
+      </div>
+    </div>
+
+    <!-- bars -->
+    <div style="margin: 180px 0">
+      <div style="margin: 24px 100%"></div>
+      <div class="bars" style="left: 47%"></div>
+      <div class="bars bar2" style="right: 68%"></div>
+      <div style="margin: 30px 100%"></div>
+
+      <div class="bars bar1" style="right: 62%"></div>
+      <div class="bars" style="left: 57%"></div>
+    </div>
+
+    <div class="footnote">
+      <p>Created by Jackson Glisczinski</p>
+      <a id="srcCode" href="https://github.com/jacksongski/PortfolioSite">Source Code</a>
+    </div>
+  </div>
+</body>
+
 </html>

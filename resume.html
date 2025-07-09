@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!-- TODO
+ 
+add link to code, add to website??
+
+add terms: SRE?
+
+-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jackson Glisczinski's Resume</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+      p,
+      ul {
+        margin: 5px;
+        margin-right: 0px;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      body {
+        font-family: "PT Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        font-size: 0.9065em;
+        background-color: #313150;
+      }
+      .container {
+        width: 80%;
+        max-width: 816px;
+        min-height: 1056px;
+
+        /* TODO - remove at end */
+        max-height: 1056px;
+
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 0;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: white;
+      }
+      .header {
+        background-color: #4b3f72;
+        color: white;
+        text-align: center;
+        padding: 0px 0 0 0;
+        width: 100%;
+        font-size: 3em;
+        font-weight: bold;
+      }
+      .break {
+        background-color: #4b3f72;
+        padding: 0px 0;
+        margin-top: 3px;
+        width: 100%;
+        height: 5px;
+      }
+      .columns {
+        display: flex;
+        height: calc(100% - 3em - 21px);
+      }
+      .left-column {
+        background-color: #f2f0ff; /* light purple */
+        width: 25%;
+        padding: 10px;
+      }
+      .right-column {
+        width: 75%;
+        padding: 10px;
+      }
+      .section {
+        margin-bottom: 20px;
+      }
+
+      .left-column .section {
+        font-size: 0.9em;
+      }
+
+      .section-title {
+        font-weight: bold;
+        font-size: 1.3em;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+      }
+      .contact-item i {
+        margin-right: 10px;
+      }
+
+      .subheader {
+        color: #4b3f72;
+        font-weight: bold;
+      }
+      .experience-list {
+        margin-left: 0px;
+      }
+      .experience-item {
+        margin-bottom: 20px;
+        margin-left: 5px;
+      }
+      .experience-list > ul {
+        padding-inline-start: 20px;
+        font-size: 0.9em;
+      }
+      .experience-list > ul > li {
+        margin-bottom: 2px;
+      }
+      .experience-list > ul > li > strong {
+        font-weight: normal;
+        text-shadow: 0 0 0.7px #000000;
+      }
+      .subsection-title {
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-top: 10px;
+      }
+
+      .skill-bar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .skill-bar span {
+        width: 150px;
+      }
+
+      .bar {
+        width: 100%;
+        height: 10px;
+        background-color: #e0e0e0;
+        border-radius: 5px;
+        overflow: hidden;
+        margin-right: 10px;
+      }
+
+      .progress {
+        height: 100%;
+        background-color: #4b3f72;
+      }
+
+      .project-link {
+        color: #313150;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">Jackson Glisczinski</div>
+      <div class="break"></div>
+      <div class="columns">
+        <div class="left-column">
+          <div class="section">
+            <div class="section-title">Contact</div>
+            <div class="contact-item">
+              <i class="material-icons">phone</i>
+              <p>(715) 498-3799</p>
+            </div>
+            <div class="contact-item">
+              <i class="material-icons"
+                ><a href="mailto:Jacksongski@icloud.com" target="_blank"
+                  >email</a
+                ></i
+              >
+              <p style="max-width: 80%; overflow-wrap: break-word">
+                <a href="mailto:Jacksongski@icloud.com" target="_blank"
+                  >Jacksongski@icloud.com</a
+                >
+              </p>
+            </div>
+            <div class="contact-item">
+              <i class="material-icons"
+                ><a href="https://www.linkedin.com/in/gliski/" target="_blank"
+                  >person</a
+                ></i
+              >
+              <p style="overflow-wrap: break-word; max-width: 70%">
+                <a href="https://www.linkedin.com/in/gliski/" target="_blank"
+                  >linkedin.com/in/gliski</a
+                >
+              </p>
+            </div>
+            <div class="contact-item">
+              <i class="material-icons"
+                ><a href="https://gliski.me" target="_blank">web</a></i
+              >
+              <p><a href="https://gliski.me" target="_blank">gliski.me</a></p>
+            </div>
+          </div>
+          <div class="break" style="margin-bottom: 20px"></div>
+          <div class="section">
+            <div class="section-title">Education</div>
+            <strong>University of Wisconsin - Madison</strong>
+            <p><span class="subheader">B.A., Computer Science</span></p>
+            <p><span class="subheader">B.A., Information Science</span></p>
+            <p>May 2023</p>
+            <p>3.724 GPA</p>
+          </div>
+          <div class="break" style="margin-bottom: 20px"></div>
+
+          <div class="section">
+            <div class="section-title">Skills</div>
+
+            <div class="skill-bar">
+              <span>Python</span>
+              <div class="bar">
+                <div class="progress" style="width: 85%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar">
+              <span>JavaScript</span>
+              <div class="bar">
+                <div class="progress" style="width: 80%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar">
+              <span>Ansible</span>
+              <div class="bar">
+                <div class="progress" style="width: 70%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar">
+              <span>HTML/CSS</span>
+              <div class="bar">
+                <div class="progress" style="width: 70%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar">
+              <span>Java</span>
+              <div class="bar">
+                <div class="progress" style="width: 65%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar">
+              <span>React</span>
+              <div class="bar">
+                <div class="progress" style="width: 60%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar">
+              <span>Vue</span>
+              <div class="bar">
+                <div class="progress" style="width: 55%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar">
+              <span>SQL</span>
+              <div class="bar">
+                <div class="progress" style="width: 50%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar">
+              <span>C#</span>
+              <div class="bar">
+                <div class="progress" style="width: 45%"></div>
+              </div>
+            </div>
+
+            <div class="skill-bar">
+              <span>Kotlin</span>
+              <div class="bar">
+                <div class="progress" style="width: 45%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="right-column">
+          <div class="section">
+            <div class="section-title">Experience</div>
+            <div class="experience-item">
+              <p>
+                <strong>Rotational Software Engineer,</strong> June 2023 - Present
+              </p>
+              <p><span class="subheader">U.S. Bank</span> - Minneapolis, MN</p>
+              <div class="experience-list">
+                <p><em>Rotation 3: Money Movement (Current)</em></p>
+                <ul>
+                  <li>
+                    Resolved defects, handled low-memory scenarios, and ensured
+                    good coding practices in the U.S. Bank
+                    <strong>Android</strong> app (10M+ downloads) using
+                    <strong>Kotlin</strong>, increasing team output by 30%.
+                  </li>
+                  <li>
+                    Implemented features and sustained the performance of Mobile
+                    Check Deposit and Internal Transfers modules. Utilized
+                    <strong>Jenkins</strong> and
+                    <strong>GitLab</strong> pipelines to automate the build
+                    process and generate APKs, and tracked progress with
+                    <strong>Jira</strong>.
+                  </li>
+                </ul>
+
+                <p><em>Rotation 2: Network Automation</em></p>
+                <ul>
+                  <li>
+                    Automated <strong>ServiceNow</strong> network incident
+                    enrichment with <strong>Ansible</strong> by developing
+                    playbooks that reduced resolution time by up to 60% and
+                    streamlined technicians' tasks.
+                  </li>
+                  <li>
+                    Orchestrated automation processes in <strong>AWX</strong>,
+                    using execution environments containerized with
+                    <strong>Docker</strong> and <strong>Kubernetes</strong>.
+                  </li>
+                  <li>
+                    Developed and maintained enterprise-wide Ansible Galaxy
+                    collections in
+                    <strong>Python</strong>, and fully automated the update
+                    process with a <strong>DevOps</strong> pipeline, which
+                    reduced manual steps by 50% and published a self-updating
+                    documentation site for over 30 modules.
+                  </li>
+                </ul>
+
+                <p><em>Rotation 1: InfoLease - Commercial Leasing</em></p>
+                <ul>
+                  <li>
+                    Built <strong>API</strong> endpoints using
+                    <strong>Java</strong> with <strong>MyBatis</strong> and
+                    <strong>Spring</strong> to bridge modern technologies with
+                    legacy <strong>UniBasic</strong> systems, enhancing system interoperability and
+                    facilitating scalability.
+                  </li>
+                  <li>
+                    Created custom UI components with
+                    <strong>JSP</strong> embedded in a third-party leasing
+                    solution, enhancing user experience and meeting specific
+                    business needs for 10,000+ users.
+                  </li>
+                  <li>
+                    Managed <strong>Oracle</strong> databases, improving data
+                    handling for over 3 million financing contract records.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="experience-item">
+              <p><strong>Computer and Technology Services Intern,</strong> May 2021 - June 2023</p>
+              <p>
+                <span class="subheader"
+                  >Epic</span
+                >
+                - Verona, WI
+              </p>
+              <div class="experience-list">
+                <ul>
+                  <li>
+                    Developed and managed a
+                    <a href="https://gliski.me/maps.html" class="project-link">
+                      full-stack campus delivery web app
+                    </a>
+                    that visualized floor plans with interactive, highlighted
+                    rooms based on office inputs. Aggregated data for over 4,000
+                    offices from <strong>MySQL</strong> databases, reducing room
+                    lookup time by 75% and speeding up delivery times.
+                  </li>
+                  <li>
+                    Contributed to the CaTS Computer Database, an internal
+                    website used department-wide, utilizing the
+                    <strong>.NET</strong> framework and <strong>C#</strong>,
+                    with a front-end built in <strong>TypeScript</strong> and
+                    <strong>Vue</strong>.
+                  </li>
+                  <li>
+                    Mentored five CaTS assistants, providing guidance on
+                    HelpDesk operations, onboarding processes for up to 500 new
+                    hires monthly, campus navigation, and web development.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="section">
+            <div class="section-title">Projects</div>
+
+            <div class="experience-item">
+              <p>
+                <strong
+                  >Fitness Friend Finder,
+                  <span class="subheader">Developer</span></strong
+                >
+              </p>
+              <div class="experience-list">
+                <ul>
+                  <li>
+                    Participated in the full-stack development of a
+                    <a
+                      href="https://github.com/jacksongski/BigBuffBadgersApp"
+                      class="project-link"
+                      >fitness-focused dating app</a
+                    >
+                    as part of a six-person team, using
+                    <strong>FastAPI</strong>, <strong>React</strong>, and
+                    <strong>MongoDB</strong>.
+                  </li>
+                  <li>
+                    Constructed key features including user authentication,
+                    matching algorithms, server-side image storage on
+                    <strong>GCP</strong>, and database management. Contributed
+                    to <strong>UX</strong> design and managed version control
+                    with <strong>GitLab</strong>, all while adhering to
+                    <strong>Agile</strong> methodologies such as
+                    <strong>Scrum</strong> and
+                    <strong>Extreme Programming</strong>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- <div class="experience-item">
+              <p>
+                <strong
+                  >Discord Bot,
+                  <span class="subheader">Co-Creator</span></strong
+                >
+              </p>
+              <div class="experience-list">
+                <ul>
+                  <li>
+                    Developed a <strong>Python</strong>-based Discord bot for
+                    NFT communities using Pycord, implementing features such as
+                    automated role assignment, channel creation, and NFT asset
+                    tracking.
+                  </li>
+                  <li>
+                    Optimized data retrieval from a rate-limited
+                    <strong>API</strong> to ensure real-time accuracy and
+                    efficiency in displaying up-to-date NFT collection
+                    information.
+                  </li>
+                </ul>
+              </div>
+            </div> -->
+            <div class="experience-item">
+              <p>
+                <strong
+                  >Gym Tracker, <span class="subheader">Creator</span></strong
+                >
+              </p>
+              <div class="experience-list">
+                <ul>
+                  <li>
+                    Engineered a
+                    <a href="https://gliski.me/nick.html" class="project-link"
+                      >web application</a
+                    >
+                    to visualize occupancy trends for the main UW campus gym
+                    using web scraping techniques to gather data from the gym's
+                    website.
+                  </li>
+                  <li>
+                    Implemented a <strong>Python</strong> script on a Raspberry
+                    Pi to automate data collection and storage in a
+                    <strong>MySQL</strong> database, with
+                    <strong>PHP</strong> handling server-side interactions.
+                    Designed the front-end using <strong>HTML</strong>,
+                    <strong>CSS</strong>, and <strong>JavaScript</strong>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
