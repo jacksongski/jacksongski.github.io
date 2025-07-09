@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jackson Glisczinski</title>
+    <link rel="icon" type="image/gif/png" href="./assets/logo.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="navbar">
+      <a href="./index.html" class="navItems">HOME</a>
+      <a href="./index.html#abt" class="navItems">ABOUT</a>
+      <a href="./index.html#wrk" class="navItems">WORK</a>
+      <a href="./index.html#cntct" class="navItems">CONTACT</a>
+    </div>
+
+    <div id="container">
+      <div class="bars" style="right: 52%"></div>
+      <div style="margin: 24px 100%"></div>
+      <div class="bars bar1" style="left: 60%"></div>
+      <div class="bars bar2" style="right: 68%"></div>
+      <div class="bars" style="left: 52%"></div>
+      <div style="margin: 100px 100%"></div>
+
+      <div style="margin: auto; width: 800px">
+        <h1 style="color: #cdcfff">EPIC MAPS</h1>
+        <h2>Internal Tool For IT Team</h2>
+
+        <div style="margin: 80px"></div>
+        <div>
+          <h3>
+            On the Verona, WI campus, Epic employs over 10,000 people in over 30
+            different buildings. As a member of the Computer and Techonology
+            Services team, my colleagues and I spend a good portion of time
+            traversing the campus and making computer equipment deliveries. With
+            each building having 150+ offices, navigating can be extremely time
+            consuming.
+          </h3>
+          <br />
+          <h3>
+            Epic’s internal website currently has a map system, but for our use
+            case it's very limited as it only allows you to search one office at
+            a time. My team does deliveries for upwards of 20 people at once, so
+            it is a huge hassle to search for each office individually.
+          </h3>
+          <br />
+          <h3>
+            To speed things up, I fully developed an internal tool that allows
+            for input of any number of offices. It ouputs an interactive webpage
+            with highlighted rooms on floor plan maps.
+          </h3>
+        </div>
+
+        <div style="margin: 80px"></div>
+        <div>
+          <h2 style="color: #cdcfff">Demo</h2>
+          <video
+            style="border-radius: 16px"
+            width="100%"
+            controls
+            autoplay
+            muted
+          >
+            <source src="./assets/mapdemo.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        <div style="margin: 80px"></div>
+        <div>
+          <h2 style="color: #cdcfff">Features and Improvements</h2>
+          <br />
+          <h3>
+            When I first created this tool, it was very basic and lacked
+            functionality. It would only work by taking input from a seperate
+            internal webpage, and would display a hardly readable list of map
+            images. Over the timeline of this project, I continued to scale the
+            application to make it more user-friendly.
+          </h3>
+          <br />
+          <div style="display: flex; justify-content: space-around">
+            <h4>V1</h4>
+            <h4>V2</h4>
+          </div>
+
+          <div
+            class="contain"
+            title="comparison between v1 and v2 of maps project"
+          >
+            <figure>
+              <div id="compare"></div>
+            </figure>
+            <input
+              oninput="beforeAfter()"
+              onchange="beforeAfter()"
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+              id="slider"
+            />
+          </div>
+          <div style="margin-left: 40px">
+            <h4>UI Rework</h4>
+            <h3>
+              Because the original map components relied on existing PNG files,
+              they were very hard to read; especially when using a 14" laptop
+              screen. I refactored hundreds of lines of code to create polygons
+              for each room object. This allowed me to add individual, readable
+              labels and color-coding based on room type.
+            </h3>
+            <br />
+            <h4>Hovercards</h4>
+            <h3>
+              The main drawback to using this map system was that it was not
+              very interactive, and it did not allow the user to see office
+              occupant information. I implemented hovercards so the user could
+              view the occupant's name, team, role, tenure, calendar, and
+              whether or not they were in the office. Additionally, I included
+              quick links to the occupant's devices and profile within our
+              internal site, along with easy methods of contact.
+            </h3>
+            <br />
+            <h4>Custom Input</h4>
+            <h3>
+              Most deliveries were done based off a seperate internal tool, but
+              a lot were done based off of arbitrary office lists. I added a
+              feature to allow for custom input based on a user-entered list of
+              offices. It also accounted for errors such as misformatting and
+              building abbrevations.
+            </h3>
+            <br />
+            <h4>Check-Off</h4>
+            <h3>
+              Implemented a check-off feature to make floor deliveries more
+              efficient. Clicking on an office on the map would grey it out,
+              allowing easy tracking of visited offices. Once all offices were
+              visited, the entire map would be greyed out.
+            </h3>
+            <br />
+            <h4>Printer-Friendly Maps</h4>
+            <h3>
+              Some of my colleagues prefer to leave their laptop behind during
+              deliveries, as it takes up too much space. Added a "Print Maps"
+              button for easy printing which would reformat the webpage for
+              better readability on paper.
+            </h3>
+            <br />
+            <h4>Zoom</h4>
+            <h3>
+              With different employees working on different sized screens
+              utilizing different workflows (full-screen view vs. split-screen),
+              I added zoom controls. This way, you could easily zoom in closer
+              on a map, or view multiple maps at a time.
+            </h3>
+            <br />
+          </div>
+        </div>
+
+        <div style="margin: 120px"></div>
+      </div>
+
+      <div style="margin-top: 100px">
+        <div style="margin: 24px 100%"></div>
+        <div class="bars" style="right: 52%"></div>
+        <div style="margin: 30px 100%" id="abt"></div>
+        <div class="bars bar1" style="right: 68%"></div>
+        <div class="bars" style="left: 52%"></div>
+        <div id="cntct" style="margin: 30px 100%"></div>
+        <div class="bars bar2" style="left: 78%"></div>
+      </div>
+    </div>
+    <script>
+      function beforeAfter() {
+        document.getElementById("compare").style.width =
+          document.getElementById("slider").value + "%";
+      }
+    </script>
+  </body>
+
+  <style>
+    .contain {
+      height: 73.5vw;
+      margin: 0 auto 40px auto;
+      max-height: 750px;
+      max-width: 1000px;
+      overflow: hidden;
+      width: 91%;
+      border-radius: 16px;
+    }
+    .contain figure {
+      background-image: url(./assets/aftermap.png);
+      background-size: cover;
+      font-size: 0;
+      height: 100%;
+      margin: 0;
+      position: relative;
+      width: 100%;
+    }
+    #compare {
+      background-image: url(../assets/beforemap.png);
+      background-size: cover;
+      bottom: 0;
+      border-right: 5px solid rgba(70, 70, 70, 0.5);
+      box-shadow: 10px 0 15px -13px #000;
+      height: 100%;
+      max-width: 100%;
+      min-width: 0.6%;
+      overflow: visible;
+      position: absolute;
+      width: 50%;
+      animation: first 2s 1 normal ease-in-out 0.1s;
+      -webkit-animation: first 2s 1 normal ease-in-out 0.1s;
+    }
+    input#slider {
+      border: none;
+      background: transparent;
+
+      cursor: col-resize;
+      height: 100vw;
+      left: 0;
+      margin: 0;
+      outline: none;
+      padding: 0;
+      position: relative;
+      top: -100vw;
+      width: 100%;
+    }
+
+    #compare::before {
+      background: url(https://webdevtrick.com/wp-content/uploads/comparision.png)
+        no-repeat scroll 0 center transparent;
+      background-size: contain;
+      filter: invert(70%);
+      content: " ";
+      float: right;
+      height: 100%;
+      margin-right: -34px;
+      position: relative;
+      top: 0;
+      width: 64px;
+    }
+    @keyframes first {
+      0% {
+        width: 0%;
+      }
+      50% {
+        width: 80%;
+      }
+      100% {
+        width: 50%;
+      }
+    }
+  </style>
+</html>

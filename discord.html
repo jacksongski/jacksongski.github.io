@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jackson Glisczinski</title>
+    <link rel="icon" type="image/gif/png" href="./assets/logo.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="navbar">
+      <a href="./index.html" class="navItems">HOME</a>
+      <a href="./index.html#abt" class="navItems">ABOUT</a>
+      <a href="./index.html#wrk" class="navItems">WORK</a>
+      <a href="./index.html#cntct" class="navItems">CONTACT</a>
+    </div>
+
+    <div id="container">
+      <div class="bars" style="right: 52%"></div>
+      <div style="margin: 24px 100%"></div>
+      <div class="bars bar1" style="left: 60%"></div>
+      <div class="bars bar2" style="right: 68%"></div>
+      <div class="bars" style="left: 52%"></div>
+      <div style="margin: 100px 100%"></div>
+
+      <div style="margin: auto; width: 800px">
+        <h1 style="color: #cdcfff">DISCORD BOT</h1>
+        <h2>For NFT Communities</h2>
+
+        <div style="margin: 80px"></div>
+        <div>
+          <img
+            src="./assets/argus.jpg"
+            style="float: right; position: relative; margin: 50px 20px"
+            alt="image of bot profile picture"
+          />
+          <h3>
+            I worked with a partner for about a month to build a deployable
+            Discord bot to be used for NFT-focused communities. The bot was
+            named Argus, and it made a number of operations more streamlined and
+            easier for Discord server administrators. These operations were
+            executed by “slash commands” so that when an admin typed the command
+            into the server chat, Python code was executed on the back-end.
+          </h3>
+        </div>
+
+        <div style="margin: 120px"></div>
+        <div>
+          <h2 style="color: #cdcfff">/setup</h2>
+          <br />
+          <h3>
+            This slash command was created for a one-time use in a server. Once
+            the admin sends “/setup” in the chat (usually in a blank, empty
+            Discord server), the server would then be initialized with a
+            template similar to popular NFT communities. The simple command
+            would create multiple text channels, voice channels, and roles. The
+            roles would be set up in a hierarchy, such that certain roles had
+            more admin-like permissions an certain channels were limited to
+            select roles. Additionally, in order to prevent accidents, if the
+            command was entered by mistake, the admin would have to input a
+            second confirmation, otherwise the command would time out. The setup
+            command could also be undone.
+          </h3>
+        </div>
+
+        <div style="margin: 120px"></div>
+        <div>
+          <h2 style="color: #cdcfff">/opensea</h2>
+          <br />
+          <h3>
+            OpenSea is a marketplace for NFTs, and Discord mods often like to
+            track these sales of NFT contracts. When an admin would type the
+            command with an NFT contract number, the bot would begin “tracking”
+            that contract. So, when any sort of sale was made, a message
+            containing the NFT thumbnail, name, collection, price, etc. were
+            sent to that text channel. This was done through constant GET
+            requests using the OpenSea API. This made it much easier for
+            communities to see how well an NFT collection is selling.
+          </h3>
+        </div>
+
+        <div style="margin: 120px"></div>
+        <div>
+          <h2 style="color: #cdcfff">Other Commands</h2>
+          <br />
+          <h3>
+            As /setup and /opensea were the most involved commands, the majority
+            of my effort was put into those. Here is a list of some of the other
+            commands Argus could perform.
+          </h3>
+          <br />
+          <div style="margin-left: 40px">
+            <h4>/create_giveaway</h4>
+            <h3>
+              Creates a giveaway with a specified prize and time, and selects a
+              winner randomly when the time is up.
+            </h3>
+            <br />
+            <h4>/reroll</h4>
+            <h3>
+              Reroll a previously created giveaway for a number of winners.
+            </h3>
+            <br />
+            <h4>/poll</h4>
+            <h3>
+              Creates a poll with a max of 10 options that ends at a specified
+              time.
+            </h3>
+            <br />
+            <h4>/reaction_roles</h4>
+            <h3>
+              Creates an embed so that when users react with given emojis, they
+              will be assigned a corresponding role.
+            </h3>
+            <br />
+            <h4>/get_blacklist</h4>
+            <h3>
+              Displays a list of users currently blacklisted from the server.
+            </h3>
+            <br />
+            <h4>/record</h4>
+            <h3>Records the wallet address for a user.</h3>
+            <br />
+            <h4>/whitelist</h4>
+            <h3>
+              Calls button for whitelist members to enter their whitelist
+              address.
+            </h3>
+            <br />
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 100px">
+        <div style="margin: 24px 100%"></div>
+        <div class="bars" style="right: 52%"></div>
+        <div style="margin: 30px 100%" id="abt"></div>
+        <div class="bars bar1" style="right: 68%"></div>
+        <div class="bars" style="left: 52%"></div>
+        <div id="cntct" style="margin: 30px 100%"></div>
+        <div class="bars bar2" style="left: 78%"></div>
+      </div>
+    </div>
+  </body>
+</html>

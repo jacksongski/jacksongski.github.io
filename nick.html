@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jackson Glisczinski</title>
+    <link rel="icon" type="image/gif/png" href="./assets/logo.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="navbar">
+      <a href="./index.html" class="navItems">HOME</a>
+      <a href="./index.html#abt" class="navItems">ABOUT</a>
+      <a href="./index.html#wrk" class="navItems">WORK</a>
+      <a href="./index.html#cntct" class="navItems">CONTACT</a>
+    </div>
+
+    <div id="container">
+      <div class="bars" style="right: 52%"></div>
+      <div style="margin: 24px 100%"></div>
+      <div class="bars bar1" style="left: 60%"></div>
+      <div class="bars bar2" style="right: 68%"></div>
+      <div class="bars" style="left: 52%"></div>
+      <div style="margin: 100px 100%"></div>
+
+      <div style="margin: auto; width: 800px">
+        <h1 style="color: #cdcfff">GYM TRACKER</h1>
+        <h2>For Occupancy of UW's Gym</h2>
+
+        <div style="margin: 80px"></div>
+        <div>
+          <h3>
+            UW-Madison has over 40,000 students on campus. With one of the two
+            major fitness centers closed for renovation, many students turn to
+            the Nicholas Recreation Center (The Nick) for their workouts.
+            Because all of UW’s student body is limited to one on-campus gym
+            option, it can become extremely busy, with significantly longer wait
+            times.
+          </h3>
+          <br />
+          <h3>
+            I was never sure of the best time to go to The Nick, as it usually
+            seemed to be packed, yet every so often it would be very quiet. The
+            <a
+              href="https://recwell.wisc.edu/locations/nick/"
+              style="color: #cdcfff; text-decoration: underline"
+            >
+              UW-Madison Recreation & Wellbeing website</a
+            >
+            offers a “live” tracker that updates approximately every hour, but
+            in order to get any valuable data, I’d have to check constantly
+            throughout the day to gauge the best time to go.
+          </h3>
+          <br />
+          <h3>
+            So, I decided to create a way to keep a log on all of the
+            occupancies recorded and graph them. I recently added functionality
+            for UW's other major gym, The Shell. You can view the finished
+            product here:
+          </h3>
+          <a
+            href="./GymTracker/index.html"
+            style="display: block; text-align: center; margin-top: 60px"
+            ><button>VIEW (inactive)</button></a
+          >
+        </div>
+
+        <div style="margin: 120px"></div>
+        <div>
+          <h2 style="color: #cdcfff">How It Works</h2>
+          <br />
+          <h3>
+            The idea of the application is quite simple: collect data and log it
+            on a graph.
+          </h3>
+          <br />
+          <h3>
+            For the data collection side, I created a simple Python script that
+            runs every five minutes on my Raspberry Pi. It scrapes the UW
+            RecWell webpage for the desired data, and if the data has been
+            updated, then it executes a SQL query to insert data onto a server.
+          </h3>
+          <br />
+          <h3>
+            On the front-end side, I used chart.js which is an open-source data
+            visualization library. When the page is opened, an Ajax GET request
+            is executed, which runs a PHP script to fetch from the database. The
+            data is then parsed, and displayed on the graph.
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 100px">
+      <div style="margin: 24px 100%"></div>
+      <div class="bars" style="right: 52%"></div>
+      <div style="margin: 30px 100%" id="abt"></div>
+      <div class="bars bar1" style="right: 68%"></div>
+      <div class="bars" style="left: 52%"></div>
+      <div id="cntct" style="margin: 30px 100%"></div>
+      <div class="bars bar2" style="left: 78%"></div>
+    </div>
+  </body>
+</html>

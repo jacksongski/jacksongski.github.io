@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Jackson Glisczinski</title>
+    <link rel="icon" type="image/gif/png" href="./assets/logo.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div id="navbar">
+      <a href="./index.html" class="navItems">HOME</a>
+      <a href="./index.html#abt" class="navItems">ABOUT</a>
+      <a href="./index.html#wrk" class="navItems">WORK</a>
+      <a href="./index.html#cntct" class="navItems">CONTACT</a>
+    </div>
+
+    <div id="container">
+      <div class="bars" style="right: 52%"></div>
+      <div style="margin: 24px 100%"></div>
+      <div class="bars bar1" style="left: 60%"></div>
+      <div class="bars bar2" style="right: 68%"></div>
+      <div class="bars" style="left: 52%"></div>
+      <div style="margin: 100px 100%"></div>
+
+      <div style="margin: auto; width: 800px">
+        <h1 style="color: #cdcfff">INTRO TO AI</h1>
+        <h2>CS540 Projects</h2>
+
+        <div style="margin: 80px"></div>
+        <h3>
+          In the Spring 2022 semester, I took UW-Madison’s Introduction to
+          Artificial Intelligence class. Over the course of the semester, I
+          worked on projects with topics in PCA, hierarchal clustering, linear
+          regression, neural networks, deep learning, and AI in games, where I
+          implemented minimax and A* algorithims. Here are a few in more detail.
+        </h3>
+        <div style="margin: 120px"></div>
+        <div>
+          <h2 style="color: #cdcfff">PCA</h2>
+          <img
+            src="./assets/pca.jpg"
+            style="width: 800px"
+            alt="comparison of compressed image vs normal image"
+          />
+          <h3>
+            This project invloved using linear algebra and PCA (Principal
+            Component Analysis) to project images. It utilized the Yale face
+            dataset which is a large set of 32x32 face pictures. The program
+            would convert the image to number array data, find the covariance
+            matrix, find the eigenvalues, return a new matrix of eigenvectors,
+            and display an updated image with a smoother appearance.
+          </h3>
+        </div>
+
+        <div style="margin: 120px"></div>
+        <div>
+          <h2 style="color: #cdcfff">Neural Networks</h2>
+          <img
+            src="./assets/nn.jpg"
+            style="width: 800px"
+            alt="dataset picture of clothes"
+          />
+          <h3>
+            Using deep learning and neural networks, this project was able to
+            predict labels for various images. The model used images of clothing
+            items such as t-shirts, pants, jackets, shoes, and boots from a
+            large dataset as training data. Once the model was finished
+            training, it could evaluate its effectiveness on itself.
+            Additionally, a user could input an image of a clothing item, and
+            the name of the clothing item was effectively predicted.
+          </h3>
+        </div>
+
+        <div style="margin: 120px"></div>
+        <div>
+          <h2 style="color: #cdcfff">A* On 7-Tile Puzzle</h2>
+          <img
+            src="./assets/puzz.jpg"
+            style="width: 800px"
+            alt="example picture of seven tile puzzle"
+          />
+          <h3>
+            The 7-tile puzzle has the objective of moving from any given state
+            of the board, to the board above on the right. The constraints are
+            that only one tile can be moved at a time to an open space, and they
+            can only moved one space left, right, up, or down. The secondary
+            objective was to complete the puzzle in as few moves as possible.
+            This program provided the optimal solution to solve the puzzle with
+            the minimal number of moves for any state, using the A* algorithm.
+          </h3>
+        </div>
+      </div>
+
+      <div style="margin-top: 100px">
+        <div style="margin: 24px 100%"></div>
+        <div class="bars" style="right: 52%"></div>
+        <div style="margin: 30px 100%" id="abt"></div>
+        <div class="bars bar1" style="right: 68%"></div>
+        <div class="bars" style="left: 52%"></div>
+        <div id="cntct" style="margin: 30px 100%"></div>
+        <div class="bars bar2" style="left: 78%"></div>
+      </div>
+    </div>
+  </body>
+</html>
