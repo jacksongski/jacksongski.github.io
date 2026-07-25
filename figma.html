@@ -2,118 +2,141 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Jackson Glisczinski</title>
-    <link rel="icon" type="image/gif/png" href="./assets/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Prototypes · Jackson Glisczinski</title>
+    <meta name="description"
+      content="Three clickable Figma app concepts — a music streaming app, transit, and LaundryGo — designed end to end." />
+    <link rel="canonical" href="https://jacksongski.github.io/figma.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Jackson Glisczinski" />
+    <meta property="og:title" content="App Prototypes · Jackson Glisczinski" />
+    <meta property="og:description"
+      content="Three clickable Figma app concepts — a music streaming app, transit, and LaundryGo — designed end to end." />
+    <meta property="og:url" content="https://jacksongski.github.io/figma.html" />
+    <meta property="og:image" content="https://jacksongski.github.io/assets/laundrygo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://jacksongski.github.io/assets/laundrygo.jpg" />
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <script>var t=null;try{t=localStorage.getItem('theme')}catch(e){}document.documentElement.setAttribute('data-theme',t||'purple')</script>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="bc4a2c80-9bf5-42d1-b16d-a6926be29dcf"></script>
   </head>
 
   <body>
     <div id="navbar">
       <a href="./index.html" class="navItems">HOME</a>
-      <a href="./index.html#abt" class="navItems">ABOUT</a>
-      <a href="./index.html#wrk" class="navItems">WORK</a>
-      <a href="./index.html#cntct" class="navItems">CONTACT</a>
+      <a href="./index.html#about" class="navItems">ABOUT</a>
+      <a href="./index.html#work" class="navItems">WORK</a>
+      <a href="./index.html#contact" class="navItems">CONTACT</a>
     </div>
 
     <div id="container">
       <div class="bars" style="right: 52%"></div>
-      <div style="margin: 24px 100%"></div>
-      <div class="bars bar1" style="left: 60%"></div>
-      <div class="bars bar2" style="right: 68%"></div>
-      <div class="bars" style="left: 52%"></div>
-      <div style="margin: 100px 100%"></div>
+      <div style="margin: 20px 100%"></div>
+      <div class="bars bar1" style="left: 64%"></div>
+      <div class="bars bar2" style="right: 70%"></div>
+      <div style="margin: 60px 100%"></div>
 
-      <div
-        style="
-          margin: auto;
-          width: 800px;
-          display: grid;
-          grid-template-columns: 1fr 2fr;
-          align-items: center;
-        "
-      >
-        <div style="grid-column: 1/3">
-          <h1 style="color: #cdcfff">FIGMA</h1>
-          <h2>App Prototypes</h2>
-          <div style="margin: 80px"></div>
-        </div>
+      <div class="pd">
+        <!-- Hero -->
+        <header class="pd-hero">
+          <span class="pd-eyebrow">Design · Coursework</span>
+          <h1>App Prototypes</h1>
+          <p class="pd-subtitle">
+            Interactive app prototypes I designed in Figma across UW–Madison
+            design and HCI courses.
+          </p>
+          <p class="pd-lead">
+            Each of these started from a real problem and some user research,
+            then turned into a clickable Figma prototype. They're where I got
+            comfortable with interaction design and thinking through a flow
+            before writing any code.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">UI/UX</span>
+            <span class="skill-tag">User Research</span>
+          </div>
+        </header>
 
-        <!-- LaundryGo -->
-        <img
-          src="./assets/laundrygo.jpg"
-          style="width: 80%; margin: 80px 0"
-          alt="app screenshot of laundrygo app"
-        />
-        <div style="align-items: center" ;>
-          <h2 style="color: #cdcfff; margin-bottom: 30px">LaundryGo</h2>
-          <h3>
-            This was my first project I created with Figma. I worked with two
-            other group members in LIS341: Intro to Interactive Design to create
-            an app for a mock laundry service.
-          </h3>
-          <a
-            href="https://www.figma.com/proto/nXZm0RcyLjSPZvXOQ7AEPb/Group-3-Final?node-id=0%3A1"
-            style="display: block; text-align: center; margin-top: 30px"
-            ><button>VIEW</button></a
-          >
-        </div>
+        <!-- Prototypes -->
+        <section class="pd-section">
+          <span class="pd-eyebrow pd-eyebrow--sec">Prototypes</span>
+          <h2>Three clickable concepts</h2>
+          <div class="pd-gallery">
+            <div class="pd-shot">
+              <img src="./assets/laundrygo.jpg" alt="LaundryGo prototype" loading="lazy" decoding="async" width="441" height="892" />
+              <div class="pd-shot-body">
+                <h3>LaundryGo</h3>
+                <p>
+                  My first Figma project, for LIS341 (Intro to Interactive
+                  Design): a mock on-demand laundry service, designed with two
+                  teammates.
+                </p>
+                <a
+                  class="pd-link"
+                  href="https://www.figma.com/proto/nXZm0RcyLjSPZvXOQ7AEPb/Group-3-Final?node-id=0%3A1"
+                  target="_blank"
+                  rel="noopener"
+                  >Open in Figma <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /> <path d="M11 13l9 -9" /> <path d="M15 4h5v5" /></svg></i></a>
+              </div>
+            </div>
+            <div class="pd-shot">
+              <img src="./assets/bus.jpg" alt="UW Bus Tracker prototype" loading="lazy" decoding="async" width="433" height="887" />
+              <div class="pd-shot-body">
+                <h3>UW Bus Tracker</h3>
+                <p>
+                  From CS571 (Intro to HCI). After surveying students about
+                  Madison's bus system, my partner and I prototyped a live
+                  bus-tracking app.
+                </p>
+                <a
+                  class="pd-link"
+                  href="https://www.figma.com/proto/bpzH032gmFTAyhHd8gpJH1/Protoype-1?node-id=0%3A1"
+                  target="_blank"
+                  rel="noopener"
+                  >Open in Figma <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /> <path d="M11 13l9 -9" /> <path d="M15 4h5v5" /></svg></i></a>
+              </div>
+            </div>
+            <div class="pd-shot">
+              <img src="./assets/music.jpg" alt="Music streaming prototype" loading="lazy" decoding="async" width="433" height="884" />
+              <div class="pd-shot-body">
+                <h3>Music Streaming</h3>
+                <p>
+                  A streaming-service concept that blends the best of Apple Music
+                  and Spotify with a bigger social layer.
+                </p>
+                <a
+                  class="pd-link"
+                  href="https://www.figma.com/proto/59q6tctMJ3mBBtoAmDRaSC/570-Individual-1?node-id=0%3A1"
+                  target="_blank"
+                  rel="noopener"
+                  >Open in Figma <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /> <path d="M11 13l9 -9" /> <path d="M15 4h5v5" /></svg></i></a>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <img
-          src="./assets/bus.jpg"
-          style="width: 80%; margin: 80px 0"
-          alt="app screenshot of bus tracker app"
-        />
-        <div style="align-items: center" ;>
-          <h2 style="color: #cdcfff; margin-bottom: 30px">UW-Bus Tracker</h2>
-          <h3>
-            I designed this app in CS571: Intro to HCI. After conducting
-            research of the student body’s opinion on Madison’s bus system, my
-            groupmate and I created the idea of a live bus tracker app.
-          </h3>
-          <a
-            href="https://www.figma.com/proto/bpzH032gmFTAyhHd8gpJH1/Protoype-1?node-id=0%3A1"
-            style="display: block; text-align: center; margin-top: 30px"
-            ><button>VIEW</button></a
-          >
-        </div>
-
-        <img
-          src="./assets/music.jpg"
-          style="width: 80%; margin: 80px 0"
-          alt="app screenshot of music streaming app"
-        />
-        <div style="align-items: center" ;>
-          <h2 style="color: #cdcfff; margin-bottom: 30px">Music Streaming</h2>
-          <h3>
-            This is an app protoype for a music streaming service. The objective
-            was to combine all of the great features of Apple Music and Spotify,
-            while also adding a larger social aspect.
-          </h3>
-          <a
-            href="https://www.figma.com/proto/59q6tctMJ3mBBtoAmDRaSC/570-Individual-1?node-id=0%3A1"
-            style="display: block; text-align: center; margin-top: 30px"
-            ><button>VIEW</button></a
-          >
+        <div class="pd-back">
+          <a href="./index.html#work" class="btn">← Back to work</a>
         </div>
       </div>
-    </div>
 
-    <div style="margin-top: 100px">
-      <div style="margin: 24px 100%"></div>
-      <div class="bars" style="right: 52%"></div>
-      <div style="margin: 30px 100%" id="abt"></div>
-      <div class="bars bar1" style="right: 68%"></div>
-      <div class="bars" style="left: 52%"></div>
-      <div id="cntct" style="margin: 30px 100%"></div>
-      <div class="bars bar2" style="left: 78%"></div>
+      <div style="margin-top: 110px">
+        <div style="margin: 24px 100%"></div>
+        <div class="bars" style="right: 52%"></div>
+        <div style="margin: 30px 100%"></div>
+        <div class="bars bar1" style="right: 68%"></div>
+        <div class="bars" style="left: 52%"></div>
+      </div>
     </div>
+  <script src="./cursor.js" defer></script>
+  <script src="./theme.js" defer></script>
   </body>
 </html>
