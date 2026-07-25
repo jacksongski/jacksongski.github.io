@@ -5,11 +5,12 @@
   var THEMES = [
     { id: "purple", label: "Purple", sw: "#cdcfff" },
     { id: "blue", label: "Blue", sw: "#a5c8ff" },
-    { id: "cyan", label: "Cyan", sw: "#8fe3ea" },
     { id: "green", label: "Green", sw: "#9fe6c4" },
-    { id: "amber", label: "Amber", sw: "#f2d79b" },
     { id: "red", label: "Red", sw: "#ffb0b8" },
-    { id: "multi", label: "Multicolor", sw: null },
+    { id: "multi", label: "Multicolor", sw: null, swClass: "sw-multi" },
+    { id: "miami", label: "Miami Vice", sw: "#ff7eb6", swClass: "sw-miami" },
+    { id: "tropical", label: "Tropical", sw: "#23ced9", swClass: "sw-tropical" },
+    { id: "savanna", label: "Savanna", sw: "#e8a07c", swClass: "sw-savanna" },
   ];
   var KEY = "theme";
   var root = document.documentElement;
@@ -73,7 +74,7 @@
     THEMES.forEach(function (t) {
       var b = document.createElement("button");
       b.type = "button";
-      b.className = "theme-swatch" + (t.id === "multi" ? " sw-multi" : "");
+      b.className = "theme-swatch" + (t.swClass ? " " + t.swClass : "");
       if (t.sw) b.style.setProperty("--sw", t.sw);
       b.setAttribute("aria-label", t.label + " theme");
       b.setAttribute("title", t.label);
