@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <script>var t=null;try{t=localStorage.getItem('theme')}catch(e){}document.documentElement.setAttribute('data-theme',t||'purple')</script>
+  <title>404 · Jackson Glisczinski</title>
+  <link rel="icon" type="image/gif/png" href="./assets/logo.png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    .nf {
+      max-width: var(--content);
+      margin-inline: auto;
+      padding: clamp(80px, 16vh, 160px) var(--gutter) 80px;
+      text-align: center;
+    }
+    .nf-code {
+      font-weight: 200;
+      font-size: clamp(5rem, 17vw, 10.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      background: linear-gradient(176deg, #ffffff 0%, #cfcfe8 82%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nf-title {
+      font-weight: 300;
+      font-size: var(--fs-h2);
+      margin-top: var(--s-3);
+      color: var(--text);
+    }
+    .nf-text {
+      max-width: 44ch;
+      margin: var(--s-4) auto var(--s-7);
+      font-weight: 300;
+      font-size: var(--fs-lead);
+      line-height: 1.6;
+      color: var(--text-soft);
+    }
+
+    /* game */
+    .nf-game {
+      max-width: 640px;
+      margin: 0 auto var(--s-7);
+      padding: var(--s-4);
+      border-radius: var(--r-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(
+        165deg,
+        color-mix(in srgb, var(--accent) 5%, transparent),
+        color-mix(in srgb, var(--accent) 1.5%, transparent)
+      );
+      box-shadow: var(--shadow-1);
+    }
+    .nf-hud {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: var(--s-2);
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-mute);
+    }
+    .nf-hud .nf-score {
+      color: var(--accent);
+      font-size: 1.1rem;
+      letter-spacing: 0.06em;
+    }
+    #game {
+      display: block;
+      width: 100%;
+      height: 240px;
+      border-radius: var(--r-sm);
+      cursor: pointer;
+    }
+    .nf-hint {
+      min-height: 1.2em;
+      margin: var(--s-3) 0 0;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      color: var(--text-mute);
+    }
+    .nf-actions {
+      display: flex;
+      justify-content: center;
+      gap: var(--s-3);
+      flex-wrap: wrap;
+    }
+  </style>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="bc4a2c80-9bf5-42d1-b16d-a6926be29dcf"></script>
+</head>
+
+<body>
+  <div class="bg-bars" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <div id="navbar">
+    <a href="./index.html#home" class="navItems">HOME</a>
+    <a href="./index.html#about" class="navItems">ABOUT</a>
+    <a href="./index.html#work" class="navItems">WORK</a>
+    <a href="./index.html#contact" class="navItems">CONTACT</a>
+  </div>
+
+  <div id="container">
+    <div class="nf">
+      <div class="nf-code">404</div>
+      <h1 class="nf-title">This page ran off.</h1>
+      <p class="nf-text">
+        The link is broken or the page moved. While you're here — jump the bars.
+      </p>
+
+      <div class="nf-game">
+        <div class="nf-hud">
+          <span class="nf-score" id="nf-score">0</span>
+          <span class="nf-best" id="nf-best">Best 0</span>
+        </div>
+        <canvas id="game" aria-label="Bar-jumper mini game"></canvas>
+        <p class="nf-hint" id="nf-hint">Press Space / tap to jump the bars</p>
+      </div>
+
+      <div class="nf-actions">
+        <a class="btn btn-primary" href="./index.html">← Back home</a>
+        <a class="btn" href="./index.html#work">See my work</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var canvas = document.getElementById("game");
+      if (!canvas || !canvas.getContext) return;
+      var ctx = canvas.getContext("2d");
+      var scoreEl = document.getElementById("nf-score");
+      var bestEl = document.getElementById("nf-best");
+      var hintEl = document.getElementById("nf-hint");
+
+      var DPR = Math.min(window.devicePixelRatio || 1, 2);
+      var W = 0,
+        H = 240;
+      function resize() {
+        W = canvas.clientWidth || 600;
+        canvas.width = W * DPR;
+        canvas.height = H * DPR;
+        ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+        if (player && state !== "playing") draw();
+      }
+
+      var GROUND, player, obstacles, speed, frames, score, state, raf;
+      var best = parseInt(localStorage.getItem("nf-best") || "0", 10);
+
+      function reset() {
+        GROUND = H - 42;
+        player = { x: 56, y: GROUND - 26, size: 26, vy: 0, onGround: true };
+        obstacles = [];
+        speed = 3.6;
+        frames = 0;
+        score = 0;
+        state = "ready";
+        sync();
+        hintEl.textContent = "Press Space / tap to jump the bars";
+        draw();
+      }
+
+      function sync() {
+        scoreEl.textContent = score;
+        bestEl.textContent = "Best " + best;
+      }
+
+      function jump() {
+        if (state === "over") reset();
+        if (state === "ready") {
+          state = "playing";
+          hintEl.textContent = "";
+          player.vy = -14.2;
+          player.onGround = false;
+          raf = requestAnimationFrame(loop);
+          return;
+        }
+        if (player.onGround) {
+          player.vy = -14.2;
+          player.onGround = false;
+        }
+      }
+
+      function spawn() {
+        obstacles.push({
+          x: W + 12,
+          w: 14 + Math.random() * 12,
+          h: 22 + Math.random() * 40,
+        });
+      }
+
+      function rr(x, y, w, h, r) {
+        ctx.beginPath();
+        ctx.moveTo(x + r, y);
+        ctx.arcTo(x + w, y, x + w, y + h, r);
+        ctx.arcTo(x + w, y + h, x, y + h, r);
+        ctx.arcTo(x, y + h, x, y, r);
+        ctx.arcTo(x, y, x + w, y, r);
+        ctx.closePath();
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, W, H);
+        // ground
+        ctx.strokeStyle = "rgba(205,207,255,0.22)";
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(0, GROUND + 0.5);
+        ctx.lineTo(W, GROUND + 0.5);
+        ctx.stroke();
+        // obstacles
+        for (var i = 0; i < obstacles.length; i++) {
+          var o = obstacles[i];
+          var g = ctx.createLinearGradient(o.x, 0, o.x + o.w, 0);
+          g.addColorStop(0, "#4b3f72");
+          g.addColorStop(1, "#5a4d88");
+          ctx.fillStyle = g;
+          rr(o.x, GROUND - o.h, o.w, o.h, 4);
+          ctx.fill();
+        }
+        // player
+        ctx.save();
+        ctx.shadowColor = "rgba(205,207,255,0.55)";
+        ctx.shadowBlur = 14;
+        ctx.fillStyle = "#cdcfff";
+        rr(player.x, player.y, player.size, player.size, 7);
+        ctx.fill();
+        ctx.restore();
+      }
+
+      function loop() {
+        frames++;
+        speed += 0.0009;
+        // physics
+        player.vy += 0.6;
+        player.y += player.vy;
+        if (player.y >= GROUND - player.size) {
+          player.y = GROUND - player.size;
+          player.vy = 0;
+          player.onGround = true;
+        }
+        // spawn / move obstacles
+        var last = obstacles[obstacles.length - 1];
+        if (frames > 24 && (!last || last.x < W - (460 + Math.random() * 320))) {
+          spawn();
+        }
+        for (var i = obstacles.length - 1; i >= 0; i--) {
+          obstacles[i].x -= speed;
+          if (obstacles[i].x + obstacles[i].w < -10) obstacles.splice(i, 1);
+        }
+        // collision (slightly forgiving hitboxes)
+        var px = player.x + 3,
+          py = player.y + 3,
+          pw = player.size - 6,
+          ph = player.size - 6;
+        for (var j = 0; j < obstacles.length; j++) {
+          var o = obstacles[j],
+            ox = o.x + 2,
+            oy = GROUND - o.h,
+            ow = o.w - 4;
+          if (px < ox + ow && px + pw > ox && py < oy + o.h && py + ph > oy) {
+            return gameOver();
+          }
+        }
+        if (frames % 6 === 0) {
+          score++;
+          sync();
+        }
+        draw();
+        raf = requestAnimationFrame(loop);
+      }
+
+      function gameOver() {
+        cancelAnimationFrame(raf);
+        state = "over";
+        if (score > best) {
+          best = score;
+          localStorage.setItem("nf-best", best);
+        }
+        sync();
+        hintEl.textContent = "Game over · " + score + " — Space / tap to retry";
+        ctx.fillStyle = "rgba(205,207,255,0.05)";
+        ctx.fillRect(0, 0, W, H);
+      }
+
+      window.addEventListener("keydown", function (e) {
+        if (e.code === "Space" || e.code === "ArrowUp" || e.key === " ") {
+          e.preventDefault();
+          jump();
+        }
+      });
+      canvas.addEventListener("mousedown", function (e) {
+        e.preventDefault();
+        jump();
+      });
+      canvas.addEventListener(
+        "touchstart",
+        function (e) {
+          e.preventDefault();
+          jump();
+        },
+        { passive: false }
+      );
+      window.addEventListener("resize", resize);
+
+      resize();
+      reset();
+    })();
+  </script>
+  <script src="./cursor.js" defer></script>
+  <script src="./theme.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Management Automation · Jackson Glisczinski</title>
+    <meta name="description"
+      content="Change management automation — turning a repetitive engineer checklist into a single deploy that disappears into the pipeline." />
+    <link rel="canonical" href="https://jacksongski.github.io/change-management.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Jackson Glisczinski" />
+    <meta property="og:title" content="Change Management Automation · Jackson Glisczinski" />
+    <meta property="og:description"
+      content="Turning a repetitive engineer checklist into a single deploy that disappears into the pipeline." />
+    <meta property="og:url" content="https://jacksongski.github.io/change-management.html" />
+    <meta property="og:image" content="https://jacksongski.github.io/assets/logo.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://jacksongski.github.io/assets/logo.png" />
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <script>var t=null;try{t=localStorage.getItem('theme')}catch(e){}document.documentElement.setAttribute('data-theme',t||'purple')</script>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="bc4a2c80-9bf5-42d1-b16d-a6926be29dcf"></script>
+    <style>
+      /* ---------- Case study (page-scoped) ---------- */
+      .cs {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 30px 28px 60px;
+        font-family: "Montserrat", sans-serif;
+        color: #f2f2f2;
+      }
+      .cs h1,
+      .cs h2,
+      .cs h3 {
+        animation: none;
+        margin: 0;
+        line-height: 1.18;
+        font-weight: 300;
+      }
+      .cs h1,
+      .cs h1:hover {
+        font-size: 3.3rem;
+        color: #f2f2f2;
+        transform: none;
+        text-shadow: none;
+      }
+      .cs h2,
+      .cs h2:hover {
+        font-size: 1.95rem;
+        color: #f2f2f2;
+        transform: none;
+        text-shadow: none;
+      }
+      .cs h3,
+      .cs h3:hover {
+        font-size: 1.1rem;
+        font-weight: 400;
+        color: #ffffff;
+        transform: none;
+        text-shadow: none;
+      }
+
+      .cs-eyebrow {
+        display: block;
+        font-size: 0.74rem;
+        font-weight: 500;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #cdcfff;
+        margin-bottom: 16px;
+      }
+      .cs-text {
+        font-size: 1.02rem;
+        font-weight: 200;
+        line-height: 1.75;
+        color: #d8d8ec;
+        max-width: 730px;
+        margin-top: 18px;
+      }
+      .cs-section {
+        margin-top: 104px;
+      }
+      .cs-section > .cs-h2 {
+        margin-bottom: 6px;
+      }
+
+      /* neutralize the global .ti (contact-icon) styles on this page */
+      .cs .ti {
+        margin-top: 0;
+        display: inline-block;
+        line-height: 1;
+        vertical-align: middle;
+        font-size: 1.1rem;
+      }
+      .cs .cs-step i {
+        font-size: 18px;
+      }
+      .cs .cs-ba-head i {
+        font-size: 26px;
+      }
+      .cs .cs-ba-arrow i {
+        font-size: 28px;
+      }
+      .cs .cs-node i {
+        font-size: 17px;
+        color: #cdcfff;
+      }
+      .cs .cs-note i {
+        font-size: 18px;
+      }
+      .cs .cs-field-mark i {
+        font-size: 22px;
+      }
+      .cs .cs-impact i {
+        font-size: 20px;
+      }
+      .cs .cs-tech-item i {
+        font-size: 42px;
+      }
+
+      /* reveal-on-scroll (progressive enhancement) */
+      .reveal {
+        transition: opacity 0.7s ease, transform 0.7s ease;
+      }
+      .reveal-on .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+      }
+      .reveal-on .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ---------- Hero ---------- */
+      .cs-subtitle {
+        font-size: 1.25rem;
+        font-weight: 300;
+        color: #cdcfff;
+        line-height: 1.45;
+        margin-top: 18px;
+        max-width: 660px;
+      }
+      .cs-summary {
+        font-size: 1.05rem;
+        font-weight: 200;
+        line-height: 1.75;
+        color: #d8d8ec;
+        margin-top: 26px;
+        max-width: 720px;
+      }
+      .cs-metrics {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 38px;
+      }
+      .cs-metric {
+        flex: 1 1 170px;
+        background: linear-gradient(145deg, #2a2a45 0%, #1c1c33 100%);
+        border: 1px solid rgba(205, 207, 255, 0.16);
+        border-radius: 14px;
+        padding: 22px 24px;
+      }
+      .cs-metric b {
+        display: block;
+        font-size: 2.2rem;
+        font-weight: 400;
+        color: #ffffff;
+      }
+      .cs-metric span {
+        display: block;
+        font-size: 0.88rem;
+        font-weight: 200;
+        color: #a9a9cc;
+        margin-top: 6px;
+        letter-spacing: 0.3px;
+      }
+      .cs-hero .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 30px;
+      }
+
+      /* ---------- panels / generic ---------- */
+      .cs-panel {
+        background: linear-gradient(145deg, #2a2a45 0%, #1c1c33 100%);
+        border: 1px solid rgba(205, 207, 255, 0.14);
+        border-radius: 18px;
+        padding: 28px 30px;
+      }
+
+      /* ---------- old workflow steps ---------- */
+      .cs-steps {
+        margin-top: 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        max-width: 560px;
+      }
+      .cs-step {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 11px 18px;
+        background: rgba(43, 36, 66, 0.45);
+        border-left: 2px solid rgba(205, 207, 255, 0.22);
+        border-radius: 0 8px 8px 0;
+        font-size: 0.98rem;
+        font-weight: 200;
+        color: #cfcfe6;
+      }
+      .cs-step b {
+        color: #6f6f93;
+        font-weight: 400;
+        font-size: 0.82rem;
+        min-width: 18px;
+      }
+      .cs-step.is-warn {
+        color: #e6acac;
+        border-left-color: rgba(230, 140, 140, 0.5);
+      }
+      .cs-step.is-loop {
+        color: #cdcfff;
+        border-left-color: rgba(205, 207, 255, 0.5);
+      }
+      .cs-step i {
+        margin-left: auto;
+        font-size: 18px;
+        opacity: 0.7;
+      }
+
+      /* ---------- before / after ---------- */
+      .cs-ba {
+        display: grid;
+        grid-template-columns: 1fr 44px 1fr;
+        gap: 14px;
+        align-items: center;
+        margin-top: 28px;
+      }
+      .cs-ba-col {
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(145deg, #2a2a45 0%, #1c1c33 100%);
+        border: 1px solid rgba(205, 207, 255, 0.14);
+        border-radius: 16px;
+        padding: 24px 26px;
+      }
+      .cs-ba-sub {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 10px 0 2px;
+        font-size: 0.9rem;
+        font-style: italic;
+        color: #8fd6ad;
+      }
+      .cs-ba-col.is-after {
+        border-color: rgba(123, 200, 160, 0.32);
+      }
+      .cs-ba-head {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-size: 1.05rem;
+        color: #ffffff;
+        margin-bottom: 18px;
+      }
+      .cs-ba-head i {
+        font-size: 26px;
+        color: #cdcfff;
+      }
+      .is-after .cs-ba-head i {
+        color: #8fd6ad;
+      }
+      .cs-ba-item {
+        font-size: 0.95rem;
+        font-weight: 200;
+        color: #cfcfe6;
+        padding: 8px 0;
+      }
+      .cs-ba-item + .cs-ba-item {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .cs-ba-arrow {
+        display: flex;
+        justify-content: center;
+        color: #cdcfff;
+        font-size: 26px;
+      }
+
+      /* ---------- animated pipeline ---------- */
+      .cs-trigger {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        max-width: 380px;
+        margin-top: 26px;
+        padding: 14px 18px;
+        border: 1px dashed rgba(205, 207, 255, 0.32);
+        border-radius: 12px;
+        background: rgba(43, 36, 66, 0.4);
+      }
+      .cs-trigger i {
+        font-size: 22px;
+        color: #b6b6cf;
+      }
+      .cs-trigger-txt {
+        font-size: 0.98rem;
+        font-weight: 300;
+        color: #e7e7f5;
+      }
+      .cs-trigger-txt small {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 200;
+        color: #8a8aae;
+        margin-top: 2px;
+      }
+      .cs-trigger .cs-pipe-tag {
+        margin-left: auto;
+      }
+      .cs-trigger-arrow {
+        width: 380px;
+        text-align: center;
+        color: #6f6f93;
+        padding: 6px 0;
+      }
+      .cs-trigger-arrow i {
+        font-size: 22px;
+      }
+      .cs-autobox {
+        margin-top: 4px;
+        padding: 22px 26px 12px;
+        border: 1px solid rgba(205, 207, 255, 0.22);
+        border-radius: 16px;
+        background: rgba(205, 207, 255, 0.035);
+      }
+      .cs-autobox-label {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 20px;
+        font-size: 0.66rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: #cdcfff;
+      }
+      .cs-autobox-label i {
+        font-size: 0.9rem;
+      }
+      .cs-pipe {
+        position: relative;
+        margin: 0;
+        padding-left: 0;
+      }
+      .cs-pipe-track {
+        position: absolute;
+        left: 16px;
+        top: 28px;
+        bottom: 28px;
+        width: 2px;
+        background: rgba(205, 207, 255, 0.16);
+      }
+      .cs-pipe-track::after {
+        content: "";
+        position: absolute;
+        left: -3px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #cdcfff;
+        box-shadow: 0 0 12px 3px rgba(205, 207, 255, 0.7);
+        animation: pipePulse 6s linear infinite;
+      }
+      @keyframes pipePulse {
+        0% {
+          top: 0;
+          opacity: 0;
+        }
+        6% {
+          opacity: 1;
+        }
+        94% {
+          opacity: 1;
+        }
+        100% {
+          top: 100%;
+          opacity: 0;
+        }
+      }
+      .cs-pipe-node {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        height: 56px;
+      }
+      .cs-pipe-node .dot {
+        position: relative;
+        z-index: 1;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #20203a;
+        border: 2px solid rgba(205, 207, 255, 0.4);
+        flex: 0 0 auto;
+        margin-left: 8px;
+        animation: nodePing 6s linear infinite;
+        animation-delay: calc(var(--i) * 1.2s - 0.3s);
+      }
+      @keyframes nodePing {
+        0%,
+        12%,
+        100% {
+          border-color: rgba(205, 207, 255, 0.4);
+          background: #20203a;
+          box-shadow: none;
+        }
+        4% {
+          border-color: #cdcfff;
+          background: #cdcfff;
+          box-shadow: 0 0 14px 3px rgba(205, 207, 255, 0.6);
+        }
+      }
+      .cs-pipe-label {
+        font-size: 0.98rem;
+        font-weight: 300;
+        color: #e7e7f5;
+      }
+      .cs-pipe-label small {
+        display: block;
+        font-size: 0.78rem;
+        font-weight: 200;
+        color: #8a8aae;
+        margin-top: 2px;
+      }
+      /* before/after impact */
+      .cs-ba-foot {
+        margin-top: 16px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 0.92rem;
+        font-weight: 400;
+        color: #cdcfff;
+      }
+      .cs-ba-foot.is-after-foot {
+        color: #8fd6ad;
+      }
+      .cs-ba-banner {
+        margin-top: 16px;
+        text-align: center;
+        padding: 18px 22px;
+        border-radius: 14px;
+        background: rgba(205, 207, 255, 0.06);
+        border: 1px solid rgba(205, 207, 255, 0.16);
+        font-size: 1.05rem;
+        font-weight: 200;
+        color: #dcdcef;
+      }
+      .cs-ba-banner b {
+        font-weight: 500;
+        color: #cdcfff;
+      }
+      .cs-ba-banner b.ok {
+        color: #8fd6ad;
+      }
+
+      /* architecture module cards */
+      .cs-arch-li {
+        position: relative;
+        padding: 8px 0 8px 20px;
+        font-size: 0.93rem;
+        font-weight: 200;
+        color: #c8c8e0;
+        line-height: 1.5;
+      }
+      .cs-arch-li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 15px;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #cdcfff;
+      }
+
+      /* tech logos */
+      .cs-logo {
+        width: 42px;
+        height: 42px;
+        display: block;
+        opacity: 0.92;
+      }
+
+      /* ---------- architecture note ---------- */
+      .cs-note {
+        margin-top: 22px;
+        font-size: 0.92rem;
+        font-weight: 200;
+        color: #a9a9cc;
+        line-height: 1.65;
+        display: flex;
+        gap: 10px;
+        max-width: 700px;
+      }
+      .cs-note i {
+        color: #cdcfff;
+        font-size: 18px;
+        margin-top: 1px;
+      }
+
+      /* ---------- validation demo ---------- */
+      .cs-form {
+        margin-top: 26px;
+        max-width: 460px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .cs-field {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 13px 16px;
+        border-radius: 10px;
+        border: 1.5px solid rgba(231, 120, 120, 0.7);
+        background: rgba(43, 36, 66, 0.5);
+        animation: fieldBorder 5s ease-in-out infinite;
+        animation-delay: var(--d);
+      }
+      @keyframes fieldBorder {
+        0%,
+        32% {
+          border-color: rgba(231, 120, 120, 0.7);
+          background: rgba(74, 42, 50, 0.4);
+        }
+        48%,
+        100% {
+          border-color: rgba(123, 200, 160, 0.7);
+          background: rgba(40, 60, 50, 0.35);
+        }
+      }
+      .cs-field-key {
+        font-size: 0.82rem;
+        color: #9a9abc;
+        width: 96px;
+        flex: 0 0 auto;
+      }
+      .cs-field-val {
+        font-size: 0.95rem;
+        color: #e7e7f5;
+        font-weight: 300;
+      }
+      .cs-field-mark {
+        margin-left: auto;
+        position: relative;
+        width: 22px;
+        height: 22px;
+        flex: 0 0 auto;
+      }
+      .cs-field-mark i {
+        position: absolute;
+        inset: 0;
+        font-size: 22px;
+        line-height: 22px;
+      }
+      .cs-field-mark .x {
+        color: #e78787;
+        animation: markX 5s ease-in-out infinite;
+        animation-delay: var(--d);
+      }
+      .cs-field-mark .ok {
+        color: #8fd6ad;
+        opacity: 0;
+        animation: markOk 5s ease-in-out infinite;
+        animation-delay: var(--d);
+      }
+      @keyframes markX {
+        0%,
+        32% {
+          opacity: 1;
+        }
+        44%,
+        100% {
+          opacity: 0;
+        }
+      }
+      @keyframes markOk {
+        0%,
+        40% {
+          opacity: 0;
+          transform: scale(0.7);
+        }
+        52%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .cs-illus {
+        font-size: 0.78rem;
+        color: #8a8aae;
+        margin-top: 14px;
+        font-style: italic;
+      }
+
+      /* ---------- decisions / lessons / impact grids ---------- */
+      .cs-grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 28px;
+      }
+      .cs-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-top: 28px;
+      }
+      .cs-card {
+        background: linear-gradient(145deg, #2a2a45 0%, #1c1c33 100%);
+        border: 1px solid rgba(205, 207, 255, 0.14);
+        border-radius: 16px;
+        padding: 24px 26px;
+      }
+      .cs-card .k {
+        display: block;
+        font-size: 0.72rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #cdcfff;
+        margin-bottom: 12px;
+      }
+      .cs-card p {
+        margin: 8px 0 0;
+        font-size: 0.94rem;
+        font-weight: 200;
+        line-height: 1.65;
+        color: #c2c2dd;
+      }
+      .cs-impact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 26px;
+        margin-top: 28px;
+        max-width: 760px;
+      }
+      .cs-impact div {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 0.98rem;
+        font-weight: 200;
+        color: #dcdcef;
+        line-height: 1.5;
+      }
+      .cs-impact i {
+        color: #8fd6ad;
+        font-size: 20px;
+        flex: 0 0 auto;
+        margin-top: 1px;
+      }
+
+      /* ---------- tech strip ---------- */
+      .cs-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px 40px;
+        align-items: center;
+        margin-top: 28px;
+      }
+      .cs-tech-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 9px;
+        min-width: 78px;
+      }
+      .cs-tech-item i {
+        font-size: 42px;
+        color: #cdcfff;
+      }
+      .cs-tech-item .wm {
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: #cdcfff;
+        letter-spacing: 0.5px;
+      }
+      .cs-tech-item span {
+        font-size: 0.78rem;
+        font-weight: 200;
+        color: #a9a9cc;
+      }
+
+      .cs-foot {
+        margin-top: 96px;
+      }
+
+      @media only screen and (max-width: 760px) {
+        .cs h1,
+        .cs h1:hover {
+          font-size: 2.4rem;
+        }
+        .cs-ba,
+        .cs-grid-2,
+        .cs-grid-3,
+        .cs-impact {
+          grid-template-columns: 1fr;
+        }
+        .cs-ba-arrow {
+          transform: rotate(90deg);
+        }
+        .cs-timeline {
+          flex-direction: column;
+          gap: 14px;
+        }
+        .cs-tl {
+          text-align: left;
+          padding: 0 0 0 34px;
+        }
+        .cs-tl::before {
+          top: 0;
+          bottom: 0;
+          left: 9px;
+          right: auto;
+          width: 2px;
+          height: auto;
+        }
+        .cs-tl:first-child::before {
+          top: 50%;
+          left: 9px;
+        }
+        .cs-tl:last-child::before {
+          bottom: 50%;
+          left: 9px;
+        }
+        .cs-tl .node {
+          top: 50%;
+          left: 9px;
+          transform: translate(-50%, -50%);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar">
+      <a href="./index.html" class="navItems">HOME</a>
+      <a href="./index.html#about" class="navItems">ABOUT</a>
+      <a href="./index.html#work" class="navItems">WORK</a>
+      <a href="./index.html#contact" class="navItems">CONTACT</a>
+    </div>
+
+    <div id="container">
+      <div class="bars" style="right: 52%"></div>
+      <div style="margin: 20px 100%"></div>
+      <div class="bars bar1" style="left: 64%"></div>
+      <div class="bars bar2" style="right: 70%"></div>
+      <div style="margin: 60px 100%"></div>
+
+      <div class="cs">
+        <!-- ===== Hero ===== -->
+        <header class="cs-hero reveal">
+          <span class="cs-eyebrow">DevOps · Enterprise Automation</span>
+          <h1>Change Management Automation</h1>
+          <p class="cs-subtitle">
+            Automating ServiceNow change management as part of our GitLab CI
+            deployment workflow.
+          </p>
+          <p class="cs-summary">
+            A Go platform that plugs GitLab CI into the ServiceNow API to
+            automate enterprise change management. It cut release cycle time by
+            55%, removed manual change-task work, standardized deployments across
+            teams, and was approved by our governance board for production.
+          </p>
+
+          <div class="cs-metrics">
+            <div class="cs-metric">
+              <b>55%</b><span>lower release cycle time</span>
+            </div>
+            <div class="cs-metric">
+              <b>Zero</b><span>manual ServiceNow tasks</span>
+            </div>
+            <div class="cs-metric">
+              <b>Approved</b><span>by the governance board</span>
+            </div>
+          </div>
+
+          <div class="skill-tags">
+            <span class="skill-tag">Go</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">GitLab CI/CD</span>
+            <span class="skill-tag">ServiceNow REST API</span>
+            <span class="skill-tag">HashiVault</span>
+            <span class="skill-tag">Artifactory</span>
+          </div>
+        </header>
+
+        <!-- ===== Problem ===== -->
+        <section class="cs-section reveal">
+          <span class="cs-eyebrow">The Problem</span>
+          <h2 class="cs-h2">Every deployment meant manual paperwork</h2>
+          <p class="cs-text">
+            Every deployment used to require an engineer to hand-create a
+            ServiceNow change task, paste in the build details, update it
+            mid-deploy, and close it afterward. It was repetitive, error-prone,
+            inconsistent between teams, and slow.
+          </p>
+        </section>
+
+        <!-- ===== Old Manual Workflow ===== -->
+        <section class="cs-section reveal">
+          <span class="cs-eyebrow">Old Manual Workflow</span>
+          <h2 class="cs-h2">The steps engineers repeated, every time</h2>
+          <div class="cs-steps">
+            <div class="cs-step"><b>1</b> A build stage produces the build info</div>
+            <div class="cs-step"><b>2</b> Create the ServiceNow change task by hand</div>
+            <div class="cs-step"><b>3</b> Paste in the build details</div>
+            <div class="cs-step"><b>4</b> Update the task manually</div>
+            <div class="cs-step"><b>5</b> Run the deployment</div>
+            <div class="cs-step"><b>6</b> Close the task by hand afterward</div>
+            <div class="cs-step is-loop">
+              <b><i class="ti" style="margin: 0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v-3a3 3 0 0 1 3 -3h13m-3 -3l3 3l-3 3" /> <path d="M20 12v3a3 3 0 0 1 -3 3h-13m3 3l-3 -3l3 -3" /></svg></i></b> Repeat for
+              every deployment
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Solution ===== -->
+        <section class="cs-section reveal">
+          <span class="cs-eyebrow">The Solution</span>
+          <h2 class="cs-h2">Make the change task disappear into the pipeline</h2>
+          <p class="cs-text">
+            I owned the architecture and implementation end to end, under one
+            constraint: zero disruption. Teams keep shipping exactly as before.
+            One manual push kicks it off, and everything after runs
+            automatically inside the pipeline.
+          </p>
+
+          <div class="cs-trigger">
+            <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /> <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></i>
+            <span class="cs-trigger-txt"
+              >Developer pushes a deployment<small>the only manual step</small></span
+            >
+          </div>
+          <div class="cs-trigger-arrow"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6l6 -6" /></svg></i></div>
+
+          <div class="cs-autobox">
+            <span class="cs-autobox-label"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11" /></svg></i> Automated pipeline</span>
+            <div class="cs-pipe">
+              <div class="cs-pipe-track"></div>
+              <div class="cs-pipe-node">
+                <span class="dot" style="--i: 0"></span>
+                <span class="cs-pipe-label">GitLab Pipeline<small>runs as usual</small></span>
+              </div>
+              <div class="cs-pipe-node">
+                <span class="dot" style="--i: 1"></span>
+                <span class="cs-pipe-label">Open Task module<small>validates and opens the change task</small></span>
+              </div>
+              <div class="cs-pipe-node">
+                <span class="dot" style="--i: 2"></span>
+                <span class="cs-pipe-label">ServiceNow API<small>change task created</small></span>
+              </div>
+              <div class="cs-pipe-node">
+                <span class="dot" style="--i: 3"></span>
+                <span class="cs-pipe-label">Deployment<small>application ships</small></span>
+              </div>
+              <div class="cs-pipe-node">
+                <span class="dot" style="--i: 4"></span>
+                <span class="cs-pipe-label">Close Task module<small>updates and closes on success</small></span>
+              </div>
+              <div class="cs-pipe-node">
+                <span class="dot" style="--i: 5"></span>
+                <span class="cs-pipe-label">Completed change<small>auditable, hands-off</small></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Before / After ===== -->
+        <section class="cs-section reveal">
+          <span class="cs-eyebrow">Before &amp; After</span>
+          <h2 class="cs-h2">From a checklist to a single deploy</h2>
+          <div class="cs-ba">
+            <div class="cs-ba-col">
+              <div class="cs-ba-head"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /> <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></i> Engineer · before</div>
+              <div class="cs-ba-item">Create the change task</div>
+              <div class="cs-ba-item">Paste in the build details</div>
+              <div class="cs-ba-item">Update the task mid-deploy</div>
+              <div class="cs-ba-item">Close the task by hand</div>
+              <div class="cs-ba-foot">Manual, on every single deploy</div>
+            </div>
+            <div class="cs-ba-arrow"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0" /> <path d="M13 18l6 -6" /> <path d="M13 6l6 6" /></svg></i></div>
+            <div class="cs-ba-col is-after">
+              <div class="cs-ba-head"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /> <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /> <path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg></i> Pipeline · after</div>
+              <div class="cs-ba-item">Deploy exactly as before</div>
+              <div class="cs-ba-sub"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11" /></svg></i> automation handles everything else</div>
+              <div class="cs-ba-foot is-after-foot">Hands-off, zero manual steps</div>
+            </div>
+          </div>
+          <div class="cs-ba-banner">
+            Same deploy, about <b>55% less cycle time</b> and
+            <b class="ok">zero</b> manual change-management work.
+          </div>
+        </section>
+
+        <!-- ===== Architecture ===== -->
+        <section class="cs-section reveal">
+          <span class="cs-eyebrow">System Architecture</span>
+          <h2 class="cs-h2">Two modules in one image, run as pipeline jobs</h2>
+          <p class="cs-text">
+            Two modules in one Docker image, run as GitLab CI jobs. Both validate
+            their input and pull credentials before calling the ServiceNow API.
+          </p>
+
+          <div class="cs-grid-2">
+            <div class="cs-card">
+              <span class="k">Open Task</span>
+              <div class="cs-arch-li">Validates the user and the change-task content</div>
+              <div class="cs-arch-li">Reuses an existing open task, or creates a new one</div>
+              <div class="cs-arch-li">Writes it through the ServiceNow API</div>
+            </div>
+            <div class="cs-card">
+              <span class="k">Close Task</span>
+              <div class="cs-arch-li">Updates the task as the deployment runs</div>
+              <div class="cs-arch-li">Closes it once the deploy succeeds</div>
+              <div class="cs-arch-li">Writes it through the ServiceNow API</div>
+            </div>
+          </div>
+
+          <p class="cs-note">
+            <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5" /> <path d="M12 12l8 -4.5" /> <path d="M12 12l0 9" /> <path d="M12 12l-8 -4.5" /> <path d="M16 5.25l-8 4.5" /></svg></i>
+            <span
+              >Both modules pull ServiceNow credentials from HashiVault at
+              runtime, so secrets never live in the pipeline or the image. The
+              image and the apps' build metadata come from Artifactory.</span
+            >
+          </p>
+        </section>
+
+        <!-- ===== Validation ===== -->
+        <section class="cs-section reveal">
+          <span class="cs-eyebrow">Validation by Design</span>
+          <h2 class="cs-h2">Catch bad input before it becomes a change task</h2>
+          <p class="cs-text">
+            The Open Task module validates the user and the change-task content
+            before anything reaches ServiceNow, so bad input is caught in the
+            pipeline instead of becoming a broken change task.
+          </p>
+          <div class="cs-form">
+            <div class="cs-field" style="--d: 0s">
+              <span class="cs-field-key">Application</span>
+              <span class="cs-field-val">payments-api</span>
+              <span class="cs-field-mark"
+                ><i class="ti x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6l-12 12" /> <path d="M6 6l12 12" /></svg></i><i class="ti ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg></i></span>
+            </div>
+            <div class="cs-field" style="--d: 0.45s">
+              <span class="cs-field-key">Environment</span>
+              <span class="cs-field-val">production</span>
+              <span class="cs-field-mark"
+                ><i class="ti x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6l-12 12" /> <path d="M6 6l12 12" /></svg></i><i class="ti ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg></i></span>
+            </div>
+            <div class="cs-field" style="--d: 0.9s">
+              <span class="cs-field-key">Version</span>
+              <span class="cs-field-val">v2.14.0</span>
+              <span class="cs-field-mark"
+                ><i class="ti x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6l-12 12" /> <path d="M6 6l12 12" /></svg></i><i class="ti ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg></i></span>
+            </div>
+            <div class="cs-field" style="--d: 1.35s">
+              <span class="cs-field-key">Start time</span>
+              <span class="cs-field-val">2025-04-12 21:00</span>
+              <span class="cs-field-mark"
+                ><i class="ti x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6l-12 12" /> <path d="M6 6l12 12" /></svg></i><i class="ti ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5l10 -10" /></svg></i></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Technical Decisions ===== -->
+        <section class="cs-section reveal">
+          <span class="cs-eyebrow">Technical Decisions</span>
+          <h2 class="cs-h2">Choices that shaped the system</h2>
+          <div class="cs-grid-2">
+            <div class="cs-card">
+              <span class="k">Language</span>
+              <h3>Built in Go</h3>
+              <p>
+                Go was the enterprise standard, which kept the tool maintainable
+                and set it up for broader adoption across teams down the line.
+              </p>
+            </div>
+            <div class="cs-card">
+              <span class="k">Architecture</span>
+              <h3>Split into Open and Close modules</h3>
+              <p>
+                This mirrors how deployments behave. If a deploy fails, you don't
+                want a pile of meaningless tasks, so close only runs on success.
+              </p>
+            </div>
+            <div class="cs-card">
+              <span class="k">Reliability</span>
+              <h3>Validate before creating tasks</h3>
+              <p>
+                Validating deployment input at the pipeline stage stops invalid
+                change tasks from ever being created, removing a whole class of
+                manual cleanup.
+              </p>
+            </div>
+            <div class="cs-card">
+              <span class="k">Security</span>
+              <h3>Runtime secrets via HashiVault</h3>
+              <p>
+                ServiceNow credentials are pulled from HashiVault at runtime, so
+                they never live in the pipeline configuration or the Docker
+                image.
+              </p>
+            </div>
+            <div class="cs-card">
+              <span class="k">Adoption</span>
+              <h3>A reusable image, dropped into existing pipelines</h3>
+              <p>
+                One Docker image dropped into a pipeline meant teams could adopt
+                it with no onboarding and no change to how they deploy.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Impact ===== -->
+        <section class="cs-section reveal">
+          <span class="cs-eyebrow">Impact</span>
+          <h2 class="cs-h2">What it changed</h2>
+          <div class="cs-impact">
+            <div><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M9 12l2 2l4 -4" /></svg></i> Reduced deployment release cycle time by about 55%</div>
+            <div><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M9 12l2 2l4 -4" /></svg></i> Eliminated repetitive manual ServiceNow work</div>
+            <div><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M9 12l2 2l4 -4" /></svg></i> Reduced human error through automated validation</div>
+            <div><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M9 12l2 2l4 -4" /></svg></i> Standardized change management across deployments</div>
+            <div><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M9 12l2 2l4 -4" /></svg></i> Improved deployment consistency</div>
+            <div><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M9 12l2 2l4 -4" /></svg></i> Approved by the governance board</div>
+            <div><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M9 12l2 2l4 -4" /></svg></i> Integrated into existing deployment workflows</div>
+          </div>
+        </section>
+
+        <!-- ===== Lessons Learned ===== -->
+        <section class="cs-section reveal">
+          <span class="cs-eyebrow">Lessons Learned</span>
+          <h2 class="cs-h2">What I took away</h2>
+          <div class="cs-grid-3">
+            <div class="cs-card">
+              <h3>Design for adoption, not just functionality</h3>
+              <p>
+                The best automation is the kind users barely notice. Integrating
+                seamlessly into existing deployment workflows made adoption
+                straightforward across teams.
+              </p>
+            </div>
+            <div class="cs-card">
+              <h3>Validate early to reduce downstream risk</h3>
+              <p>
+                Catching invalid inputs before creating change tasks eliminated
+                manual errors and improved the reliability of every deployment.
+              </p>
+            </div>
+            <div class="cs-card">
+              <h3>Build systems that standardize good practices</h3>
+              <p>
+                Automating repetitive processes did not just save time, it
+                ensured deployments followed a consistent, auditable workflow
+                every time.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== Tech ===== -->
+        <section class="cs-section reveal">
+          <span class="cs-eyebrow">Built With</span>
+          <div class="cs-tech">
+            <div class="cs-tech-item">
+              <img class="cs-logo" src="./assets/logos/go.svg" alt="Go" loading="lazy" decoding="async" /><span>Go</span>
+            </div>
+            <div class="cs-tech-item">
+              <img class="cs-logo" src="./assets/logos/docker.svg" alt="Docker" loading="lazy" decoding="async" /><span>Docker</span>
+            </div>
+            <div class="cs-tech-item">
+              <img class="cs-logo" src="./assets/logos/gitlab.svg" alt="GitLab" loading="lazy" decoding="async" /><span>GitLab CI/CD</span>
+            </div>
+            <div class="cs-tech-item">
+              <img class="cs-logo" src="./assets/logos/servicenow.svg" alt="ServiceNow" loading="lazy" decoding="async" /><span>ServiceNow</span>
+            </div>
+            <div class="cs-tech-item">
+              <img class="cs-logo" src="./assets/logos/vault.svg" alt="HashiCorp Vault" loading="lazy" decoding="async" /><span>HashiVault</span>
+            </div>
+            <div class="cs-tech-item">
+              <img class="cs-logo" src="./assets/logos/artifactory.svg" alt="Artifactory" loading="lazy" decoding="async" /><span>Artifactory</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="cs-foot">
+          <a href="./index.html#work" class="btn">← Back to work</a>
+        </div>
+      </div>
+
+      <div style="margin-top: 110px">
+        <div style="margin: 24px 100%"></div>
+        <div class="bars" style="right: 52%"></div>
+        <div style="margin: 30px 100%"></div>
+        <div class="bars bar1" style="right: 68%"></div>
+        <div class="bars" style="left: 52%"></div>
+        <div style="margin: 30px 100%"></div>
+        <div class="bars bar2" style="left: 78%"></div>
+      </div>
+    </div>
+
+    <script>
+      document.documentElement.classList.add("reveal-on");
+      (function () {
+        var els = document.querySelectorAll(".reveal");
+        if ("IntersectionObserver" in window) {
+          var obs = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (e.isIntersecting) {
+                  e.target.classList.add("in");
+                  obs.unobserve(e.target);
+                }
+              });
+            },
+            { threshold: 0.1, rootMargin: "0px 0px -8% 0px" }
+          );
+          els.forEach(function (el) {
+            obs.observe(el);
+          });
+        } else {
+          els.forEach(function (el) {
+            el.classList.add("in");
+          });
+        }
+      })();
+    </script>
+  <script src="./cursor.js" defer></script>
+  <script src="./theme.js" defer></script>
+  </body>
+</html>

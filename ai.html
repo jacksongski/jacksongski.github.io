@@ -2,113 +2,123 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Jackson Glisczinski</title>
-    <link rel="icon" type="image/gif/png" href="./assets/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to AI · Jackson Glisczinski</title>
+    <meta name="description"
+      content="Intro to AI coursework — PCA image projection, A* search on the sliding-tile puzzle, and neural networks, built and explained." />
+    <link rel="canonical" href="https://jacksongski.github.io/ai.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Jackson Glisczinski" />
+    <meta property="og:title" content="Intro to AI · Jackson Glisczinski" />
+    <meta property="og:description"
+      content="PCA image projection, A* search on the sliding-tile puzzle, and neural networks, built and explained." />
+    <meta property="og:url" content="https://jacksongski.github.io/ai.html" />
+    <meta property="og:image" content="https://jacksongski.github.io/assets/pca.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://jacksongski.github.io/assets/pca.jpg" />
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <script>var t=null;try{t=localStorage.getItem('theme')}catch(e){}document.documentElement.setAttribute('data-theme',t||'purple')</script>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="bc4a2c80-9bf5-42d1-b16d-a6926be29dcf"></script>
   </head>
 
   <body>
     <div id="navbar">
       <a href="./index.html" class="navItems">HOME</a>
-      <a href="./index.html#abt" class="navItems">ABOUT</a>
-      <a href="./index.html#wrk" class="navItems">WORK</a>
-      <a href="./index.html#cntct" class="navItems">CONTACT</a>
+      <a href="./index.html#about" class="navItems">ABOUT</a>
+      <a href="./index.html#work" class="navItems">WORK</a>
+      <a href="./index.html#contact" class="navItems">CONTACT</a>
     </div>
 
     <div id="container">
       <div class="bars" style="right: 52%"></div>
-      <div style="margin: 24px 100%"></div>
-      <div class="bars bar1" style="left: 60%"></div>
-      <div class="bars bar2" style="right: 68%"></div>
-      <div class="bars" style="left: 52%"></div>
-      <div style="margin: 100px 100%"></div>
+      <div style="margin: 20px 100%"></div>
+      <div class="bars bar1" style="left: 64%"></div>
+      <div class="bars bar2" style="right: 70%"></div>
+      <div style="margin: 60px 100%"></div>
 
-      <div style="margin: auto; width: 800px">
-        <h1 style="color: #cdcfff">INTRO TO AI</h1>
-        <h2>CS540 Projects</h2>
+      <div class="pd">
+        <!-- Hero -->
+        <header class="pd-hero">
+          <span class="pd-eyebrow">Coursework · UW–Madison</span>
+          <h1>Intro to AI</h1>
+          <p class="pd-subtitle">
+            A semester of AI implementations from UW–Madison's CS540.
+          </p>
+          <p class="pd-lead">
+            The course worked through PCA, hierarchical clustering, linear
+            regression, neural networks, deep learning, and game AI with minimax
+            and A*. Everything was implemented from the ground up in Python.
+            Here are three of the ones I found most interesting.
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">NumPy</span>
+            <span class="skill-tag">Machine Learning</span>
+          </div>
+        </header>
 
-        <div style="margin: 80px"></div>
-        <h3>
-          In the Spring 2022 semester, I took UW-Madison’s Introduction to
-          Artificial Intelligence class. Over the course of the semester, I
-          worked on projects with topics in PCA, hierarchal clustering, linear
-          regression, neural networks, deep learning, and AI in games, where I
-          implemented minimax and A* algorithims. Here are a few in more detail.
-        </h3>
-        <div style="margin: 120px"></div>
-        <div>
-          <h2 style="color: #cdcfff">PCA</h2>
-          <img
-            src="./assets/pca.jpg"
-            style="width: 800px"
-            alt="comparison of compressed image vs normal image"
-          />
-          <h3>
-            This project invloved using linear algebra and PCA (Principal
-            Component Analysis) to project images. It utilized the Yale face
-            dataset which is a large set of 32x32 face pictures. The program
-            would convert the image to number array data, find the covariance
-            matrix, find the eigenvalues, return a new matrix of eigenvectors,
-            and display an updated image with a smoother appearance.
-          </h3>
-        </div>
+        <!-- Projects -->
+        <section class="pd-section">
+          <span class="pd-eyebrow pd-eyebrow--sec">Projects</span>
+          <h2>A few in more detail</h2>
+          <div class="pd-stack">
+            <div class="pd-item">
+              <h3>PCA image projection</h3>
+              <div class="pd-media">
+                <img src="./assets/pca.jpg" alt="PCA image reconstruction" loading="lazy" decoding="async" width="924" height="373" />
+              </div>
+              <p class="pd-text">
+                Using PCA on the Yale face dataset (32×32 images): compute the
+                covariance matrix and its eigenvectors, then reconstruct each
+                face from its top components for a smoother, compressed result.
+              </p>
+            </div>
+            <div class="pd-item">
+              <h3>Neural network clothing classifier</h3>
+              <div class="pd-media">
+                <img src="./assets/nn.jpg" alt="Clothing image dataset" loading="lazy" decoding="async" width="922" height="482" />
+              </div>
+              <p class="pd-text">
+                A neural network trained on a labeled clothing dataset (shirts,
+                pants, jackets, shoes, boots) that predicts the item in a new
+                image, and reports its accuracy on held-out data.
+              </p>
+            </div>
+            <div class="pd-item">
+              <h3>A* on the 7-tile puzzle</h3>
+              <div class="pd-media">
+                <img src="./assets/puzz.jpg" alt="Seven-tile sliding puzzle" loading="lazy" decoding="async" width="904" height="457" />
+              </div>
+              <p class="pd-text">
+                An A* solver that finds the optimal, fewest-move path from any
+                board state to the goal, sliding one tile at a time into the open
+                space.
+              </p>
+            </div>
+          </div>
+        </section>
 
-        <div style="margin: 120px"></div>
-        <div>
-          <h2 style="color: #cdcfff">Neural Networks</h2>
-          <img
-            src="./assets/nn.jpg"
-            style="width: 800px"
-            alt="dataset picture of clothes"
-          />
-          <h3>
-            Using deep learning and neural networks, this project was able to
-            predict labels for various images. The model used images of clothing
-            items such as t-shirts, pants, jackets, shoes, and boots from a
-            large dataset as training data. Once the model was finished
-            training, it could evaluate its effectiveness on itself.
-            Additionally, a user could input an image of a clothing item, and
-            the name of the clothing item was effectively predicted.
-          </h3>
-        </div>
-
-        <div style="margin: 120px"></div>
-        <div>
-          <h2 style="color: #cdcfff">A* On 7-Tile Puzzle</h2>
-          <img
-            src="./assets/puzz.jpg"
-            style="width: 800px"
-            alt="example picture of seven tile puzzle"
-          />
-          <h3>
-            The 7-tile puzzle has the objective of moving from any given state
-            of the board, to the board above on the right. The constraints are
-            that only one tile can be moved at a time to an open space, and they
-            can only moved one space left, right, up, or down. The secondary
-            objective was to complete the puzzle in as few moves as possible.
-            This program provided the optimal solution to solve the puzzle with
-            the minimal number of moves for any state, using the A* algorithm.
-          </h3>
+        <div class="pd-back">
+          <a href="./index.html#work" class="btn">← Back to work</a>
         </div>
       </div>
 
-      <div style="margin-top: 100px">
+      <div style="margin-top: 110px">
         <div style="margin: 24px 100%"></div>
         <div class="bars" style="right: 52%"></div>
-        <div style="margin: 30px 100%" id="abt"></div>
+        <div style="margin: 30px 100%"></div>
         <div class="bars bar1" style="right: 68%"></div>
         <div class="bars" style="left: 52%"></div>
-        <div id="cntct" style="margin: 30px 100%"></div>
-        <div class="bars bar2" style="left: 78%"></div>
       </div>
     </div>
+  <script src="./cursor.js" defer></script>
+  <script src="./theme.js" defer></script>
   </body>
 </html>

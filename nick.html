@@ -2,111 +2,136 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Jackson Glisczinski</title>
-    <link rel="icon" type="image/gif/png" href="./assets/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym Tracker · Jackson Glisczinski</title>
+    <meta name="description"
+      content="A gym-tracking app backed by a small scrape-and-chart pipeline — turning raw numbers into readable progress." />
+    <link rel="canonical" href="https://jacksongski.github.io/nick.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="Jackson Glisczinski" />
+    <meta property="og:title" content="Gym Tracker · Jackson Glisczinski" />
+    <meta property="og:description"
+      content="A gym-tracking app backed by a small scrape-and-chart pipeline — turning raw numbers into readable progress." />
+    <meta property="og:url" content="https://jacksongski.github.io/nick.html" />
+    <meta property="og:image" content="https://jacksongski.github.io/assets/logo.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://jacksongski.github.io/assets/logo.png" />
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+    <script>var t=null;try{t=localStorage.getItem('theme')}catch(e){}document.documentElement.setAttribute('data-theme',t||'purple')</script>
     <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/iconfont/tabler-icons.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="bc4a2c80-9bf5-42d1-b16d-a6926be29dcf"></script>
   </head>
 
   <body>
     <div id="navbar">
       <a href="./index.html" class="navItems">HOME</a>
-      <a href="./index.html#abt" class="navItems">ABOUT</a>
-      <a href="./index.html#wrk" class="navItems">WORK</a>
-      <a href="./index.html#cntct" class="navItems">CONTACT</a>
+      <a href="./index.html#about" class="navItems">ABOUT</a>
+      <a href="./index.html#work" class="navItems">WORK</a>
+      <a href="./index.html#contact" class="navItems">CONTACT</a>
     </div>
 
     <div id="container">
       <div class="bars" style="right: 52%"></div>
-      <div style="margin: 24px 100%"></div>
-      <div class="bars bar1" style="left: 60%"></div>
-      <div class="bars bar2" style="right: 68%"></div>
-      <div class="bars" style="left: 52%"></div>
-      <div style="margin: 100px 100%"></div>
+      <div style="margin: 20px 100%"></div>
+      <div class="bars bar1" style="left: 64%"></div>
+      <div class="bars bar2" style="right: 70%"></div>
+      <div style="margin: 60px 100%"></div>
 
-      <div style="margin: auto; width: 800px">
-        <h1 style="color: #cdcfff">GYM TRACKER</h1>
-        <h2>For Occupancy of UW's Gym</h2>
+      <div class="pd">
+        <!-- Hero -->
+        <header class="pd-hero">
+          <span class="pd-eyebrow">Side Project</span>
+          <h1>Gym Tracker</h1>
+          <p class="pd-subtitle">
+            A self-hosted scraper and dashboard that logs how busy UW–Madison's
+            gyms are, so you can find the quiet hours.
+          </p>
+          <p class="pd-lead">
+            With 40,000+ students and one of its two main gyms closed for
+            renovation, UW–Madison's Nicholas Recreation Center gets packed. The
+            campus RecWell site shows a live occupancy number, but it only
+            updates about hourly and keeps no history, so there's no good way to
+            tell when it's actually quiet. I built a small system that scrapes
+            that number every five minutes, stores it, and charts the trend, so
+            you can spot the patterns and pick a good time to go. I later added
+            UW's other main gym, the Shell.
+          </p>
+          <div class="pd-metrics">
+            <div class="pd-metric"><b>5 min</b><span>scrape interval</span></div>
+            <div class="pd-metric"><b>2</b><span>UW gyms tracked</span></div>
+            <div class="pd-metric"><b>24/7</b><span>automated logging</span></div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">Chart.js</span>
+            <span class="skill-tag">Raspberry Pi</span>
+          </div>
+        </header>
 
-        <div style="margin: 80px"></div>
-        <div>
-          <h3>
-            UW-Madison has over 40,000 students on campus. With one of the two
-            major fitness centers closed for renovation, many students turn to
-            the Nicholas Recreation Center (The Nick) for their workouts.
-            Because all of UW’s student body is limited to one on-campus gym
-            option, it can become extremely busy, with significantly longer wait
-            times.
-          </h3>
-          <br />
-          <h3>
-            I was never sure of the best time to go to The Nick, as it usually
-            seemed to be packed, yet every so often it would be very quiet. The
-            <a
-              href="https://recwell.wisc.edu/locations/nick/"
-              style="color: #cdcfff; text-decoration: underline"
-            >
-              UW-Madison Recreation & Wellbeing website</a
-            >
-            offers a “live” tracker that updates approximately every hour, but
-            in order to get any valuable data, I’d have to check constantly
-            throughout the day to gauge the best time to go.
-          </h3>
-          <br />
-          <h3>
-            So, I decided to create a way to keep a log on all of the
-            occupancies recorded and graph them. I recently added functionality
-            for UW's other major gym, The Shell. You can view the finished
-            product here:
-          </h3>
-          <a
-            href="./GymTracker/index.html"
-            style="display: block; text-align: center; margin-top: 60px"
-            ><button>VIEW (inactive)</button></a
-          >
-        </div>
+        <!-- How it works -->
+        <section class="pd-section">
+          <span class="pd-eyebrow pd-eyebrow--sec">How it works</span>
+          <h2>A small scrape-and-chart pipeline</h2>
+          <p class="pd-text">
+            The whole thing is a lightweight data pipeline: a Raspberry Pi
+            collects the data on a schedule, and the front end pulls the history
+            to draw the graph.
+          </p>
+          <div class="pd-flow">
+            <div class="pd-flow-step">
+              <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 6a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1l0 -12" /> <path d="M9 9h6v6h-6l0 -6" /> <path d="M3 10h2" /> <path d="M3 14h2" /> <path d="M10 3v2" /> <path d="M14 3v2" /> <path d="M21 10h-2" /> <path d="M21 14h-2" /> <path d="M14 21v-2" /> <path d="M10 21v-2" /></svg></i>
+              <b>Raspberry Pi</b>
+              <span>Python scrapes RecWell every 5 min</span>
+            </div>
+            <div class="pd-flow-arrow"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0" /> <path d="M13 18l6 -6" /> <path d="M13 6l6 6" /></svg></i></div>
+            <div class="pd-flow-step">
+              <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6a8 3 0 1 0 16 0a8 3 0 1 0 -16 0" /> <path d="M4 6v6a8 3 0 0 0 16 0v-6" /> <path d="M4 12v6a8 3 0 0 0 16 0v-6" /></svg></i>
+              <b>MySQL</b>
+              <span>stores each new reading</span>
+            </div>
+            <div class="pd-flow-arrow"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0" /> <path d="M13 18l6 -6" /> <path d="M13 6l6 6" /></svg></i></div>
+            <div class="pd-flow-step">
+              <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3" /> <path d="M3 15a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v2a3 3 0 0 1 -3 3h-12a3 3 0 0 1 -3 -3l0 -2" /> <path d="M7 8l0 .01" /> <path d="M7 16l0 .01" /></svg></i>
+              <b>PHP</b>
+              <span>serves the history on request</span>
+            </div>
+            <div class="pd-flow-arrow"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l14 0" /> <path d="M13 18l6 -6" /> <path d="M13 6l6 6" /></svg></i></div>
+            <div class="pd-flow-step">
+              <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19l16 0" /> <path d="M4 15l4 -6l4 2l4 -5l4 4" /></svg></i>
+              <b>Chart.js</b>
+              <span>renders the occupancy trend</span>
+            </div>
+          </div>
+          <p class="pd-text">
+            The Pi logged occupancy for months before I paused it. It was a fun
+            exercise in owning something end to end: the scraper, the storage,
+            a small API, and a front end, all glued together and left to run on
+            its own.
+          </p>
+        </section>
 
-        <div style="margin: 120px"></div>
-        <div>
-          <h2 style="color: #cdcfff">How It Works</h2>
-          <br />
-          <h3>
-            The idea of the application is quite simple: collect data and log it
-            on a graph.
-          </h3>
-          <br />
-          <h3>
-            For the data collection side, I created a simple Python script that
-            runs every five minutes on my Raspberry Pi. It scrapes the UW
-            RecWell webpage for the desired data, and if the data has been
-            updated, then it executes a SQL query to insert data onto a server.
-          </h3>
-          <br />
-          <h3>
-            On the front-end side, I used chart.js which is an open-source data
-            visualization library. When the page is opened, an Ajax GET request
-            is executed, which runs a PHP script to fetch from the database. The
-            data is then parsed, and displayed on the graph.
-          </h3>
+        <div class="pd-back">
+          <a href="./index.html#work" class="btn">← Back to work</a>
         </div>
       </div>
-    </div>
 
-    <div style="margin-top: 100px">
-      <div style="margin: 24px 100%"></div>
-      <div class="bars" style="right: 52%"></div>
-      <div style="margin: 30px 100%" id="abt"></div>
-      <div class="bars bar1" style="right: 68%"></div>
-      <div class="bars" style="left: 52%"></div>
-      <div id="cntct" style="margin: 30px 100%"></div>
-      <div class="bars bar2" style="left: 78%"></div>
+      <div style="margin-top: 110px">
+        <div style="margin: 24px 100%"></div>
+        <div class="bars" style="right: 52%"></div>
+        <div style="margin: 30px 100%"></div>
+        <div class="bars bar1" style="right: 68%"></div>
+        <div class="bars" style="left: 52%"></div>
+      </div>
     </div>
+  <script src="./cursor.js" defer></script>
+  <script src="./theme.js" defer></script>
   </body>
 </html>
