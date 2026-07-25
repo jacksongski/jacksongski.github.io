@@ -1,565 +1,972 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jackson Glisczinski — Full-Stack Software Engineer</title>
+    <meta
+      name="description"
+      content="Full-stack software engineer building software end to end — web, backend, and the infrastructure that ties it together. See selected work and get in touch."
+    />
+    <meta name="author" content="Jackson Glisczinski" />
+    <meta name="theme-color" content="#171624" />
+    <link rel="canonical" href="https://jacksongski.github.io/" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jackson Glisczinski — Full-Stack Software Engineer</title>
-  <meta name="description"
-    content="Full-stack software engineer building software end to end — web, backend, and the infrastructure that ties it together. See selected work and get in touch." />
-  <meta name="author" content="Jackson Glisczinski" />
-  <meta name="theme-color" content="#171624" />
-  <link rel="canonical" href="https://jacksongski.github.io/" />
+    <!-- Open Graph (LinkedIn, Slack, iMessage link previews) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Jackson Glisczinski" />
+    <meta
+      property="og:title"
+      content="Jackson Glisczinski — Full-Stack Software Engineer"
+    />
+    <meta
+      property="og:description"
+      content="Full-stack software engineer building software end to end — web, backend, and the infrastructure that ties it together."
+    />
+    <meta property="og:url" content="https://jacksongski.github.io/" />
+    <meta
+      property="og:image"
+      content="https://jacksongski.github.io/assets/logo.png"
+    />
+    <meta property="og:image:alt" content="JG monogram — Jackson Glisczinski" />
 
-  <!-- Open Graph (LinkedIn, Slack, iMessage link previews) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Jackson Glisczinski" />
-  <meta property="og:title" content="Jackson Glisczinski — Full-Stack Software Engineer" />
-  <meta property="og:description"
-    content="Full-stack software engineer building software end to end — web, backend, and the infrastructure that ties it together." />
-  <meta property="og:url" content="https://jacksongski.github.io/" />
-  <meta property="og:image" content="https://jacksongski.github.io/assets/logo.png" />
-  <meta property="og:image:alt" content="JG monogram — Jackson Glisczinski" />
+    <!-- Twitter/X card -->
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Jackson Glisczinski — Full-Stack Software Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Full-stack software engineer building software end to end — web, backend, and the infrastructure that ties it together."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jacksongski.github.io/assets/logo.png"
+    />
 
-  <!-- Twitter/X card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Jackson Glisczinski — Full-Stack Software Engineer" />
-  <meta name="twitter:description"
-    content="Full-stack software engineer building software end to end — web, backend, and the infrastructure that ties it together." />
-  <meta name="twitter:image" content="https://jacksongski.github.io/assets/logo.png" />
-
-  <!-- Structured data: identify Jackson as a person entity -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Jackson Glisczinski",
-    "url": "https://jacksongski.github.io/",
-    "image": "https://jacksongski.github.io/assets/logo.png",
-    "jobTitle": "Full-Stack Software Engineer",
-    "sameAs": [
-      "https://github.com/jacksongski",
-      "https://www.linkedin.com/in/gliski/"
-    ]
-  }
-  </script>
-
-  <script>var t=null;try{t=localStorage.getItem('theme')}catch(e){}document.documentElement.setAttribute('data-theme',t||'purple')</script>
-  <link rel="icon" type="image/gif/png" href="./assets/logo.png" />
-  <link rel="stylesheet" href="./styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="bc4a2c80-9bf5-42d1-b16d-a6926be29dcf"></script>
-</head>
-
-<body>
-  <div class="bg-bars" aria-hidden="true">
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-    <span></span><span></span><span></span><span></span><span></span><span></span>
-  </div>
-
-  <div id="navbar">
-    <a href="#home" class="navItems">HOME</a>
-    <a href="#about" class="navItems">ABOUT</a>
-    <a href="#work" class="navItems">WORK</a>
-    <a href="#contact" class="navItems">CONTACT</a>
-  </div>
-
-  <!-- bars -->
-  <div id="container">
-    <div style="margin: 28px 0 0">
-      <div class="bars bar2" style="left: 78%"></div>
-      <div class="bars" style="right: 52%"></div>
-      <div style="margin: 24px 100%"></div>
-      <div class="bars bar1" style="left: 60%"></div>
-      <div class="bars bar2" style="right: 68%"></div>
-      <div class="bars" style="left: 52%"></div>
-    </div>
-
-    <!-- Home Page -->
-    <div id="home">
-      <div class="hero-name">
-        <h3 class="hero-hi">Hi, I'm</h3>
-        <h1>JACKSON</h1>
-        <h1>GLISCZINSKI</h1>
-        <h4>(glih - shin - skee)</h4>
-      </div>
-
-      <div class="hero-pitch">
-        <h2>Full-Stack Software Engineer</h2>
-        <h3 class="hero-tagline">
-          I build software end to end — web, backend, and the
-          infrastructure that ties it together.
-        </h3>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="./assets/resume.pdf" target="_blank" rel="noopener">Resume</a>
-          <a class="btn" href="https://github.com/jacksongski" target="_blank" rel="noopener">GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/gliski/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn" href="#contact">Get in touch</a>
-        </div>
-      </div>
-
-      <a class="scroll-cue" href="#about" aria-label="Scroll to explore">
-        <span class="scroll-cue-label">Scroll</span>
-        <span class="scroll-cue-track"><span class="scroll-cue-dot"></span></span>
-      </a>
-    </div>
-
-    <!-- bars -->
-    <div style="margin: 120px 0">
-      <div class="bars bar2" style="left: 60%"></div>
-      <div style="margin: 24px 100%"></div>
-      <div class="bars" style="right: 52%"></div>
-      <div style="margin: 30px 100%"></div>
-      <div class="bars bar1" style="right: 68%"></div>
-      <div class="bars" style="left: 52%"></div>
-      <div style="margin: 30px 100%"></div>
-      <div class="bars bar2" style="left: 78%"></div>
-    </div>
-
-    <!-- About Page -->
-    <div id="about">
-      <h1 class="section-title">ABOUT</h1>
-
-      <div class="about-main">
-        <div class="about-text">
-          <p>
-            I'm a software engineer at U.S. Bank, where I work across the full
-            stack. I enjoy untangling complex problems and turning ideas into
-            reliable, well-designed software, whether that's building new
-            features, modernizing existing systems, or figuring out how all the
-            pieces fit together, and I care most when that work actually moves
-            the needle for the people using it.
-          </p>
-          <p>
-            Before U.S. Bank, I spent two years interning at Epic Systems,
-            building tools that people relied on every day. I earned my degrees
-            in Computer Science and Information Science from the University of
-            Wisconsin–Madison. What's kept me going since is the same thing:
-            building software people actually use.
-          </p>
-        </div>
-
-        <div class="about-photo">
-          <img src="./assets/me.jpeg" alt="Portrait of Jackson Glisczinski" loading="lazy" decoding="async" width="400" height="395" />
-          <div class="overlay"></div>
-        </div>
-      </div>
-
-      <div class="skills">
-        <h3 class="skills-heading">Skills</h3>
-
-        <div class="skills-group">
-          <span class="skills-label">Languages</span>
-          <div class="skill-tags">
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">Go</span>
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">TypeScript</span>
-            <span class="skill-tag">C#</span>
-          </div>
-        </div>
-
-        <div class="skills-group">
-          <span class="skills-label">Frontend</span>
-          <div class="skill-tags">
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Redux</span>
-            <span class="skill-tag">Micro-Frontends</span>
-            <span class="skill-tag">Vue</span>
-            <span class="skill-tag">SCSS</span>
-            <span class="skill-tag">Webpack</span>
-            <span class="skill-tag">A11y</span>
-          </div>
-        </div>
-
-        <div class="skills-group">
-          <span class="skills-label">Backend</span>
-          <div class="skill-tags">
-            <span class="skill-tag">Spring</span>
-            <span class="skill-tag">FastAPI</span>
-            <span class="skill-tag">MyBatis</span>
-            <span class="skill-tag">REST</span>
-            <span class="skill-tag">.NET</span>
-            <span class="skill-tag">Swagger</span>
-            <span class="skill-tag">OAuth 2.0</span>
-            <span class="skill-tag">JUnit</span>
-          </div>
-        </div>
-
-        <div class="skills-group">
-          <span class="skills-label">Infra &amp; DevOps</span>
-          <div class="skill-tags">
-            <span class="skill-tag">GitLab CI</span>
-            <span class="skill-tag">Jenkins</span>
-            <span class="skill-tag">Docker</span>
-            <span class="skill-tag">Kubernetes</span>
-            <span class="skill-tag">Helm</span>
-            <span class="skill-tag">Ansible</span>
-            <span class="skill-tag">Datadog</span>
-            <span class="skill-tag">Splunk</span>
-          </div>
-        </div>
-
-        <div class="skills-group">
-          <span class="skills-label">Data</span>
-          <div class="skill-tags">
-            <span class="skill-tag">Oracle</span>
-            <span class="skill-tag">DB2</span>
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">Redis</span>
-            <span class="skill-tag">LDAP</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- bars -->
-    <div style="margin: 120px 0">
-      <div class="bars bar2" style="left: 64%"></div>
-      <div style="margin: 24px 100%"></div>
-      <div class="bars" style="right: 58%"></div>
-      <div class="bars bar1" style="left: 60%"></div>
-      <div style="margin: 30px 100%"></div>
-      <div class="bars" style="right: 52%"></div>
-      <div style="margin: 120px 100%"></div>
-    </div>
-
-    <!-- Work -->
-    <div id="work">
-      <h1 class="section-title">WORK</h1>
-
-      <div class="exp-grid">
-        <a class="exp-card exp-card--featured" href="./change-management.html">
-          <span class="exp-badge"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3" /> <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" /> <path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg></i>DevOps</span>
-          <h3 class="exp-card-title">Change Management Automation</h3>
-          <p class="exp-card-line">
-            A Go platform that automates change management across GitLab CI/CD
-            and enterprise ITSM workflows, standardizing deployments across
-            teams and cutting release cycle time by 55%.
-          </p>
-          <div class="skill-tags">
-            <span class="skill-tag">Go</span>
-            <span class="skill-tag">GitLab CI/CD</span>
-            <span class="skill-tag">ServiceNow</span>
-          </div>
-          <span class="work-card-link">View project →</span>
-        </a>
-
-        <div class="exp-card">
-          <span class="exp-badge"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6" /> <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M8 11v-4a4 4 0 1 1 8 0v4" /></svg></i>Full-Stack</span>
-          <h3 class="exp-card-title">Enterprise Authentication Modernization</h3>
-          <p class="exp-card-line">
-            Led the frontend integration for a modernized authentication
-            experience on a corporate card platform serving
-            500,000+ users. Built React and Java/Spring components supporting a
-            federated authentication flow, from login through session handling.
-          </p>
-          <div class="skill-tags">
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">Java/Spring</span>
-            <span class="skill-tag">Auth</span>
-          </div>
-        </div>
-
-        <div class="exp-card">
-          <span class="exp-badge"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14" /> <path d="M11 4h2" /> <path d="M12 17v.01" /></svg></i>Architecture</span>
-          <h3 class="exp-card-title">AI-Powered Mobile Check Deposit</h3>
-          <p class="exp-card-line">
-            Contributed to a patent-backed redesign of Mobile Check Deposit in
-            a #1-rated mobile banking app. Built proof-of-concepts exploring AI/ML
-            image-quality validation, OCR workflows, and cross-platform
-            architecture for iOS and Android.
-          </p>
-          <div class="skill-tags">
-            <span class="skill-tag">AI/ML</span>
-            <span class="skill-tag">OCR</span>
-            <span class="skill-tag">Kotlin</span>
-            <span class="skill-tag">Swift</span>
-          </div>
-        </div>
-
-        <a class="exp-card exp-card--featured" href="./maps.html">
-          <span class="exp-badge"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5" /> <path d="M9 4v13" /> <path d="M15 7v5.5" /> <path d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879" /> <path d="M19 18v.01" /></svg></i>Full-Stack</span>
-          <h3 class="exp-card-title">Epic Maps</h3>
-          <p class="exp-card-line">
-            A full-stack internal tool with interactive floor-plan maps spanning
-            4,000+ offices, cutting room-lookup time by roughly 75%.
-          </p>
-          <div class="skill-tags">
-            <span class="skill-tag">Vue</span>
-            <span class="skill-tag">C#</span>
-            <span class="skill-tag">.NET</span>
-            <span class="skill-tag">MySQL</span>
-          </div>
-          <span class="work-card-link">View project →</span>
-        </a>
-
-        <a class="exp-card" href="https://github.com/jacksongski/BigBuffBadgersApp" target="_blank" rel="noopener">
-          <span class="exp-badge"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h1" /> <path d="M6 8h-2a1 1 0 0 0 -1 1v6a1 1 0 0 0 1 1h2" /> <path d="M6 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1 -1v-10a1 1 0 0 0 -1 -1h-1a1 1 0 0 0 -1 1" /> <path d="M9 12h6" /> <path d="M15 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1 -1v-10a1 1 0 0 0 -1 -1h-1a1 1 0 0 0 -1 1" /> <path d="M18 8h2a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-2" /> <path d="M22 12h-1" /></svg></i>Side Project</span>
-          <h3 class="exp-card-title">Fitness Friend Finder</h3>
-          <p class="exp-card-line">
-            A swipe-based app for finding compatible workout partners. Led the
-            frontend and built authentication, matching, and image uploads.
-          </p>
-          <div class="skill-tags">
-            <span class="skill-tag">React</span>
-            <span class="skill-tag">FastAPI</span>
-            <span class="skill-tag">MongoDB</span>
-            <span class="skill-tag">GCP</span>
-          </div>
-          <span class="work-card-link">View project <svg class="wcl-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6" /> <path d="M11 13l9 -9" /> <path d="M15 4h5v5" /></svg></span>
-        </a>
-
-        <a class="exp-card" href="./nick.html">
-          <span class="exp-badge"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19l16 0" /> <path d="M4 15l4 -6l4 2l4 -5l4 4" /></svg></i>Side Project</span>
-          <h3 class="exp-card-title">UW Gym Tracker</h3>
-          <p class="exp-card-line">
-            Scrapes and charts occupancy trends for UW's gyms, powered by a
-            Raspberry Pi cron job feeding a live dashboard.
-          </p>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">PHP</span>
-            <span class="skill-tag">Chart.js</span>
-          </div>
-          <span class="work-card-link">View project →</span>
-        </a>
-
-        <a class="exp-card exp-card--featured" href="./discord.html">
-          <span class="exp-badge"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" /> <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" /> <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg></i>Side Project</span>
-          <h3 class="exp-card-title">Discord Bot</h3>
-          <p class="exp-card-line">
-            A deployable bot for NFT communities: slash-command server setup,
-            giveaways, and live OpenSea sale tracking.
-          </p>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">OpenSea API</span>
-          </div>
-          <span class="work-card-link">View project →</span>
-        </a>
-
-        <a class="exp-card" href="./figma.html">
-          <span class="exp-badge"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /> <path d="M6 6a3 3 0 0 1 3 -3h6a3 3 0 0 1 3 3a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3 -3" /> <path d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15" /></svg></i>Design</span>
-          <h3 class="exp-card-title">App Prototypes</h3>
-          <p class="exp-card-line">
-            Interactive Figma prototypes from my HCI and interaction-design
-            coursework.
-          </p>
-          <div class="skill-tags">
-            <span class="skill-tag">Figma</span>
-            <span class="skill-tag">UX</span>
-          </div>
-          <span class="work-card-link">View project →</span>
-        </a>
-
-        <a class="exp-card" href="./ai.html">
-          <span class="exp-badge"><i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.5 13a3.5 3.5 0 0 0 -3.5 3.5v1a3.5 3.5 0 0 0 7 0v-1.8" /> <path d="M8.5 13a3.5 3.5 0 0 1 3.5 3.5v1a3.5 3.5 0 0 1 -7 0v-1.8" /> <path d="M17.5 16a3.5 3.5 0 0 0 0 -7h-.5" /> <path d="M19 9.3v-2.8a3.5 3.5 0 0 0 -7 0" /> <path d="M6.5 16a3.5 3.5 0 0 1 0 -7h.5" /> <path d="M5 9.3v-2.8a3.5 3.5 0 0 1 7 0v10" /></svg></i>Coursework</span>
-          <h3 class="exp-card-title">Intro to AI</h3>
-          <p class="exp-card-line">
-            Implementations from UW's CS540: PCA, neural networks, and A*
-            search.
-          </p>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">ML</span>
-          </div>
-          <span class="work-card-link">View project →</span>
-        </a>
-      </div>
-    </div>
-
-    <!-- bars -->
-    <div style="margin: 120px 0">
-      <div class="bars bar2" style="left: 60%"></div>
-      <div style="margin: 24px 100%"></div>
-      <div class="bars" style="right: 52%"></div>
-      <div style="margin: 30px 100%"></div>
-      <div class="bars bar1" style="right: 68%"></div>
-      <div class="bars" style="left: 52%"></div>
-      <div style="margin: 30px 100%"></div>
-      <div class="bars bar2" style="left: 78%"></div>
-      <div style="margin: 200px 100%"></div>
-    </div>
-
-    <!-- Contact Page -->
-    <div id="contact">
-      <h1 class="section-title">CONTACT</h1>
-      <div class="contact-form">
-        <form action="https://formsubmit.co/3b219c37933134fecb1df310715456cf" method="POST">
-          <!-- spam guards: hashed endpoint (email not in source), honeypot, captcha -->
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <input type="hidden" name="_captcha" value="true" />
-          <input type="hidden" name="_subject" value="New message from your portfolio" />
-          <div>
-            <label for="name">
-              <h4>Name:</h4>
-            </label>
-            <input type="text" name="name" id="name" required />
-          </div>
-          <br />
-          <div>
-            <label for="email">
-              <h4>Email:</h4>
-            </label>
-            <input type="email" name="email" id="email" required />
-          </div>
-          <br />
-
-          <div>
-            <label for="message">
-              <h4>Message:</h4>
-            </label>
-            <textarea name="message" rows="12" id="message" required></textarea>
-          </div>
-          <br />
-          <br />
-          <div style="text-align: center">
-            <button type="submit">SUBMIT</button>
-          </div>
-        </form>
-      </div>
-      <!-- social links -->
-      <div class="contact-links">
-        <a href="https://github.com/jacksongski" target="_blank" rel="noopener">
-          <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg></i>
-          <h4>GitHub</h4>
-        </a><a href="https://www.linkedin.com/in/gliski/" target="_blank" rel="noopener">
-          <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 11v5" /> <path d="M8 8v.01" /> <path d="M12 16v-5" /> <path d="M16 16v-3a2 2 0 1 0 -4 0" /> <path d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10" /></svg></i>
-          <h4>LinkedIn</h4>
-        </a><a href="./assets/resume.pdf" target="_blank" rel="noopener">
-          <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v4a1 1 0 0 0 1 1h4" /> <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" /> <path d="M9 17h6" /> <path d="M9 13h6" /></svg></i>
-          <h4>Resume</h4>
-        </a><a id="emailLink" href="#" data-u="jacksongski" data-d="icloud.com" rel="nofollow">
-          <i class="ti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /> <path d="M3 7l9 6l9 -6" /></svg></i>
-          <h4>Email</h4>
-        </a>
-      </div>
-    </div>
-
-    <!-- bars -->
-    <div style="margin: 180px 0">
-      <div style="margin: 24px 100%"></div>
-      <div class="bars" style="left: 47%"></div>
-      <div class="bars bar2" style="right: 68%"></div>
-      <div style="margin: 30px 100%"></div>
-
-      <div class="bars bar1" style="right: 62%"></div>
-      <div class="bars" style="left: 57%"></div>
-    </div>
-
-    <div class="footnote">
-      <p>Created by Jackson Glisczinski</p>
-      <a id="srcCode" href="https://github.com/jacksongski/jacksongski.github.io" target="_blank" rel="noopener">Source Code</a>
-      <a id="egg404" href="./404.html">404</a>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      var root = document.documentElement;
-      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var hasIO = "IntersectionObserver" in window;
-
-      /* built at runtime so the address isn't in the page source for scrapers */
-      var mail = document.getElementById("emailLink");
-      if (mail) {
-        var addr = mail.getAttribute("data-u") + "@" + mail.getAttribute("data-d");
-        mail.setAttribute("href", "mailto:" + addr);
+    <!-- Structured data: identify Jackson as a person entity -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jackson Glisczinski",
+        "url": "https://jacksongski.github.io/",
+        "image": "https://jacksongski.github.io/assets/logo.png",
+        "jobTitle": "Full-Stack Software Engineer",
+        "sameAs": [
+          "https://github.com/jacksongski",
+          "https://www.linkedin.com/in/gliski/"
+        ]
       }
+    </script>
 
-      /* Scroll work is batched into one rAF per frame so it can't stutter. */
-      var field = document.querySelector(".bg-bars");
-      var cue = document.querySelector(".scroll-cue");
-      var y = 0,
-        queued = false;
-      var onFrame = function () {
-        if (field && !reduce) {
-          /* bars move at ~9% of scroll speed, capped so the field stays full */
-          var ty = y * 0.09;
-          var cap = window.innerHeight * 0.55;
-          if (ty > cap) ty = cap;
-          field.style.transform = "translate3d(0,-" + ty + "px,0)";
+    <script>
+      var t = null;
+      try {
+        t = localStorage.getItem("theme");
+      } catch (e) {}
+      document.documentElement.setAttribute("data-theme", t || "purple");
+    </script>
+    <link rel="icon" type="image/gif/png" href="./assets/logo.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="bc4a2c80-9bf5-42d1-b16d-a6926be29dcf"
+    ></script>
+  </head>
+
+  <body>
+    <div class="bg-bars" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span
+      ><span></span><span></span> <span></span><span></span><span></span
+      ><span></span><span></span><span></span><span></span> <span></span
+      ><span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div id="navbar">
+      <a href="#home" class="navItems">HOME</a>
+      <a href="#about" class="navItems">ABOUT</a>
+      <a href="#work" class="navItems">WORK</a>
+      <a href="#contact" class="navItems">CONTACT</a>
+    </div>
+
+    <!-- bars -->
+    <div id="container">
+      <div style="margin: 28px 0 0">
+        <div class="bars bar2" style="left: 78%"></div>
+        <div class="bars" style="right: 52%"></div>
+        <div style="margin: 24px 100%"></div>
+        <div class="bars bar1" style="left: 60%"></div>
+        <div class="bars bar2" style="right: 68%"></div>
+        <div class="bars" style="left: 52%"></div>
+      </div>
+
+      <!-- Home Page -->
+      <div id="home">
+        <div class="hero-name">
+          <h3 class="hero-hi">Hi, I'm</h3>
+          <h1>JACKSON</h1>
+          <h1>GLISCZINSKI</h1>
+          <h4>(glih - shin - skee)</h4>
+        </div>
+
+        <div class="hero-pitch">
+          <h2>Full-Stack Software Engineer</h2>
+          <h3 class="hero-tagline">
+            Crafting the path from interface to infrastructure.
+          </h3>
+          <div class="hero-cta">
+            <a
+              class="btn btn-primary"
+              href="./assets/resume.pdf"
+              target="_blank"
+              rel="noopener"
+              >Resume</a
+            >
+            <a
+              class="btn"
+              href="https://github.com/jacksongski"
+              target="_blank"
+              rel="noopener"
+              >GitHub</a
+            >
+            <a
+              class="btn"
+              href="https://www.linkedin.com/in/gliski/"
+              target="_blank"
+              rel="noopener"
+              >LinkedIn</a
+            >
+            <a class="btn" href="#contact">Get in touch</a>
+          </div>
+        </div>
+
+        <a class="scroll-cue" href="#about" aria-label="Scroll to explore">
+          <span class="scroll-cue-label">Scroll</span>
+          <span class="scroll-cue-track"
+            ><span class="scroll-cue-dot"></span
+          ></span>
+        </a>
+      </div>
+
+      <!-- bars -->
+      <div style="margin: 120px 0">
+        <div class="bars bar2" style="left: 60%"></div>
+        <div style="margin: 24px 100%"></div>
+        <div class="bars" style="right: 52%"></div>
+        <div style="margin: 30px 100%"></div>
+        <div class="bars bar1" style="right: 68%"></div>
+        <div class="bars" style="left: 52%"></div>
+        <div style="margin: 30px 100%"></div>
+        <div class="bars bar2" style="left: 78%"></div>
+      </div>
+
+      <!-- About Page -->
+      <div id="about">
+        <h1 class="section-title">ABOUT</h1>
+
+        <div class="about-main">
+          <div class="about-text">
+            <p>
+              I'm a software engineer at U.S. Bank, where I build software
+              across the stack, from user-facing experiences to the systems and
+              infrastructure behind them. After completing a two-year technology
+              rotation program across corporate banking, mobile, network
+              automation, and enterprise systems, I now focus on building
+              reliable solutions to complex problems where the work has a direct
+              impact.
+            </p>
+            <p>
+              Before U.S. Bank, I spent two years interning at Epic Systems,
+              building tools used in everyday operations. I earned degrees in
+              Computer Science and Information Science from the University of
+              Wisconsin–Madison. I’m driven by the challenge of crafting
+              software that is thoughtful, reliable, and useful.
+            </p>
+          </div>
+
+          <div class="about-photo">
+            <img
+              src="./assets/me.jpeg"
+              alt="Portrait of Jackson Glisczinski"
+              loading="lazy"
+              decoding="async"
+              width="400"
+              height="395"
+            />
+            <div class="overlay"></div>
+          </div>
+        </div>
+
+        <ol class="timeline" aria-label="Career timeline">
+          <li class="tl-item" style="--i: 0">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-date">2021 – May 2023</span>
+            <b class="tl-title">Epic Systems</b>
+            <span class="tl-role">Software Engineering Intern</span>
+            <span class="tl-loc">Verona, WI</span>
+          </li>
+          <li class="tl-item" style="--i: 1">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-date">May 2023</span>
+            <b class="tl-title">University of Wisconsin–Madison</b>
+            <span class="tl-role"
+              >B.A. Computer Science &amp; Information Science</span
+            >
+            <span class="tl-loc">Madison, WI</span>
+          </li>
+          <li class="tl-item" style="--i: 2">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-date">June 2023 – Oct 2025</span>
+            <b class="tl-title">U.S. Bank</b>
+            <span class="tl-role">Rotational Software Engineer</span>
+            <span class="tl-loc">Minneapolis, MN</span>
+            <ol class="tl-sub">
+              <li class="tl-subitem" style="--i: 3">
+                <span class="tl-subdot" aria-hidden="true"></span>
+                <span class="tl-subdate">June 2023</span>
+                <span class="tl-subrole">Equipment Finance</span>
+              </li>
+              <li class="tl-subitem" style="--i: 4">
+                <span class="tl-subdot" aria-hidden="true"></span>
+                <span class="tl-subdate">January 2024</span>
+                <span class="tl-subrole">Network Automation</span>
+              </li>
+              <li class="tl-subitem" style="--i: 5">
+                <span class="tl-subdot" aria-hidden="true"></span>
+                <span class="tl-subdate">June 2024</span>
+                <span class="tl-subrole">Mobile Banking</span>
+              </li>
+              <li class="tl-subitem" style="--i: 6">
+                <span class="tl-subdot" aria-hidden="true"></span>
+                <span class="tl-subdate">April 2025</span>
+                <span class="tl-subrole">Corporate Card Platform</span>
+              </li>
+            </ol>
+          </li>
+          <li class="tl-item" style="--i: 7">
+            <span class="tl-dot" aria-hidden="true"></span>
+            <span class="tl-date">October 2025 – Present</span>
+            <b class="tl-title">U.S. Bank</b>
+            <span class="tl-role">Full-Stack Software Engineer</span>
+            <span class="tl-loc">Denver, CO</span>
+          </li>
+        </ol>
+
+        <div class="skills">
+          <h3 class="skills-heading">Skills</h3>
+
+          <div class="skills-group">
+            <span class="skills-label">Languages</span>
+            <div class="skill-tags">
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">Go</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">C#</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <span class="skills-label">Frontend</span>
+            <div class="skill-tags">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Redux</span>
+              <span class="skill-tag">Micro-Frontends</span>
+              <span class="skill-tag">Vue</span>
+              <span class="skill-tag">SCSS</span>
+              <span class="skill-tag">Webpack</span>
+              <span class="skill-tag">A11y</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <span class="skills-label">Backend</span>
+            <div class="skill-tags">
+              <span class="skill-tag">Spring</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">MyBatis</span>
+              <span class="skill-tag">REST</span>
+              <span class="skill-tag">.NET</span>
+              <span class="skill-tag">Swagger</span>
+              <span class="skill-tag">OAuth 2.0</span>
+              <span class="skill-tag">JUnit</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <span class="skills-label">Infra &amp; DevOps</span>
+            <div class="skill-tags">
+              <span class="skill-tag">GitLab CI</span>
+              <span class="skill-tag">Jenkins</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">Helm</span>
+              <span class="skill-tag">Ansible</span>
+              <span class="skill-tag">Datadog</span>
+              <span class="skill-tag">Splunk</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <span class="skills-label">Data</span>
+            <div class="skill-tags">
+              <span class="skill-tag">Oracle</span>
+              <span class="skill-tag">DB2</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Redis</span>
+              <span class="skill-tag">LDAP</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- bars -->
+      <div style="margin: 120px 0">
+        <div class="bars bar2" style="left: 64%"></div>
+        <div style="margin: 24px 100%"></div>
+        <div class="bars" style="right: 58%"></div>
+        <div class="bars bar1" style="left: 60%"></div>
+        <div style="margin: 30px 100%"></div>
+        <div class="bars" style="right: 52%"></div>
+        <div style="margin: 120px 100%"></div>
+      </div>
+
+      <!-- Work -->
+      <div id="work">
+        <h1 class="section-title">WORK</h1>
+
+        <div class="exp-grid">
+          <a
+            class="exp-card exp-card--featured"
+            href="./change-management.html"
+          >
+            <span class="exp-badge"
+              ><i class="ti"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 13a8 8 0 0 1 7 7a6 6 0 0 0 3 -5a9 9 0 0 0 6 -8a3 3 0 0 0 -3 -3a9 9 0 0 0 -8 6a6 6 0 0 0 -5 3"
+                  />
+                  <path d="M7 14a6 6 0 0 0 -3 6a6 6 0 0 0 6 -3" />
+                  <path d="M14 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg></i
+              >DevOps</span
+            >
+            <h3 class="exp-card-title">Change Management Automation</h3>
+            <p class="exp-card-line">
+              A Go platform that automates change management across GitLab CI/CD
+              and enterprise ITSM workflows, standardizing deployments across
+              teams and cutting release cycle time by 55%.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Go</span>
+              <span class="skill-tag">GitLab CI/CD</span>
+              <span class="skill-tag">ServiceNow</span>
+            </div>
+            <span class="work-card-link">View project →</span>
+          </a>
+
+          <div class="exp-card">
+            <span class="exp-badge"
+              ><i class="ti"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6"
+                  />
+                  <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+                  <path d="M8 11v-4a4 4 0 1 1 8 0v4" /></svg></i
+              >Full-Stack</span
+            >
+            <h3 class="exp-card-title">
+              Enterprise Authentication Modernization
+            </h3>
+            <p class="exp-card-line">
+              Led the frontend integration for a modernized authentication
+              experience on a corporate card platform serving 500,000+ users.
+              Built React and Java/Spring components supporting a federated
+              authentication flow, from login through session handling.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Java/Spring</span>
+              <span class="skill-tag">Auth</span>
+            </div>
+          </div>
+
+          <div class="exp-card">
+            <span class="exp-badge"
+              ><i class="ti"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14"
+                  />
+                  <path d="M11 4h2" />
+                  <path d="M12 17v.01" /></svg></i
+              >Architecture</span
+            >
+            <h3 class="exp-card-title">AI-Powered Mobile Check Deposit</h3>
+            <p class="exp-card-line">
+              Contributed to a patent-backed redesign of Mobile Check Deposit in
+              a #1-rated mobile banking app. Built proof-of-concepts exploring
+              AI/ML image-quality validation, OCR workflows, and cross-platform
+              architecture for iOS and Android.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">AI/ML</span>
+              <span class="skill-tag">OCR</span>
+              <span class="skill-tag">Kotlin</span>
+              <span class="skill-tag">Swift</span>
+            </div>
+          </div>
+
+          <a class="exp-card exp-card--featured" href="./maps.html">
+            <span class="exp-badge"
+              ><i class="ti"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 18.5l-3 -1.5l-6 3v-13l6 -3l6 3l6 -3v7.5" />
+                  <path d="M9 4v13" />
+                  <path d="M15 7v5.5" />
+                  <path
+                    d="M21.121 20.121a3 3 0 1 0 -4.242 0c.418 .419 1.125 1.045 2.121 1.879c1.051 -.89 1.759 -1.516 2.121 -1.879"
+                  />
+                  <path d="M19 18v.01" /></svg></i
+              >Full-Stack</span
+            >
+            <h3 class="exp-card-title">Epic Maps</h3>
+            <p class="exp-card-line">
+              A full-stack internal tool with interactive floor-plan maps
+              spanning 4,000+ offices, cutting room-lookup time by roughly 75%.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Vue</span>
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">.NET</span>
+              <span class="skill-tag">MySQL</span>
+            </div>
+            <span class="work-card-link">View project →</span>
+          </a>
+
+          <a
+            class="exp-card"
+            href="https://github.com/jacksongski/BigBuffBadgersApp"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="exp-badge"
+              ><i class="ti"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M2 12h1" />
+                  <path d="M6 8h-2a1 1 0 0 0 -1 1v6a1 1 0 0 0 1 1h2" />
+                  <path
+                    d="M6 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1 -1v-10a1 1 0 0 0 -1 -1h-1a1 1 0 0 0 -1 1"
+                  />
+                  <path d="M9 12h6" />
+                  <path
+                    d="M15 7v10a1 1 0 0 0 1 1h1a1 1 0 0 0 1 -1v-10a1 1 0 0 0 -1 -1h-1a1 1 0 0 0 -1 1"
+                  />
+                  <path d="M18 8h2a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-2" />
+                  <path d="M22 12h-1" /></svg></i
+              >Side Project</span
+            >
+            <h3 class="exp-card-title">Fitness Friend Finder</h3>
+            <p class="exp-card-line">
+              A swipe-based app for finding compatible workout partners. Led the
+              frontend and built authentication, matching, and image uploads.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">FastAPI</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">GCP</span>
+            </div>
+            <span class="work-card-link"
+              >View project
+              <svg
+                class="wcl-ext"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M12 6h-6a2 2 0 0 0 -2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-6"
+                />
+                <path d="M11 13l9 -9" />
+                <path d="M15 4h5v5" /></svg
+            ></span>
+          </a>
+
+          <a class="exp-card" href="./nick.html">
+            <span class="exp-badge"
+              ><i class="ti"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M4 19l16 0" />
+                  <path d="M4 15l4 -6l4 2l4 -5l4 4" /></svg></i
+              >Side Project</span
+            >
+            <h3 class="exp-card-title">UW Gym Tracker</h3>
+            <p class="exp-card-line">
+              Scrapes and charts occupancy trends for UW's gyms, powered by a
+              Raspberry Pi cron job feeding a live dashboard.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">Chart.js</span>
+            </div>
+            <span class="work-card-link">View project →</span>
+          </a>
+
+          <a class="exp-card exp-card--featured" href="./discord.html">
+            <span class="exp-badge"
+              ><i class="ti"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+                  <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+                  <path
+                    d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3"
+                  />
+                  <path d="M7 16.5c3.5 1 6.5 1 10 0" /></svg></i
+              >Side Project</span
+            >
+            <h3 class="exp-card-title">Discord Bot</h3>
+            <p class="exp-card-line">
+              A deployable bot for NFT communities: slash-command server setup,
+              giveaways, and live OpenSea sale tracking.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">OpenSea API</span>
+            </div>
+            <span class="work-card-link">View project →</span>
+          </a>
+
+          <a class="exp-card" href="./figma.html">
+            <span class="exp-badge"
+              ><i class="ti"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 12a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                  <path
+                    d="M6 6a3 3 0 0 1 3 -3h6a3 3 0 0 1 3 3a3 3 0 0 1 -3 3h-6a3 3 0 0 1 -3 -3"
+                  />
+                  <path
+                    d="M9 9a3 3 0 0 0 0 6h3m-3 0a3 3 0 1 0 3 3v-15"
+                  /></svg></i
+              >Design</span
+            >
+            <h3 class="exp-card-title">App Prototypes</h3>
+            <p class="exp-card-line">
+              Interactive Figma prototypes from my HCI and interaction-design
+              coursework.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">UX</span>
+            </div>
+            <span class="work-card-link">View project →</span>
+          </a>
+
+          <a class="exp-card" href="./ai.html">
+            <span class="exp-badge"
+              ><i class="ti"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M15.5 13a3.5 3.5 0 0 0 -3.5 3.5v1a3.5 3.5 0 0 0 7 0v-1.8"
+                  />
+                  <path
+                    d="M8.5 13a3.5 3.5 0 0 1 3.5 3.5v1a3.5 3.5 0 0 1 -7 0v-1.8"
+                  />
+                  <path d="M17.5 16a3.5 3.5 0 0 0 0 -7h-.5" />
+                  <path d="M19 9.3v-2.8a3.5 3.5 0 0 0 -7 0" />
+                  <path d="M6.5 16a3.5 3.5 0 0 1 0 -7h.5" />
+                  <path d="M5 9.3v-2.8a3.5 3.5 0 0 1 7 0v10" /></svg></i
+              >Coursework</span
+            >
+            <h3 class="exp-card-title">Intro to AI</h3>
+            <p class="exp-card-line">
+              Implementations from UW's CS540: PCA, neural networks, and A*
+              search.
+            </p>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">ML</span>
+            </div>
+            <span class="work-card-link">View project →</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- bars -->
+      <div style="margin: 120px 0">
+        <div class="bars bar2" style="left: 60%"></div>
+        <div style="margin: 24px 100%"></div>
+        <div class="bars" style="right: 52%"></div>
+        <div style="margin: 30px 100%"></div>
+        <div class="bars bar1" style="right: 68%"></div>
+        <div class="bars" style="left: 52%"></div>
+        <div style="margin: 30px 100%"></div>
+        <div class="bars bar2" style="left: 78%"></div>
+        <div style="margin: 200px 100%"></div>
+      </div>
+
+      <!-- Contact Page -->
+      <div id="contact">
+        <h1 class="section-title">CONTACT</h1>
+        <div class="contact-form">
+          <form
+            action="https://formsubmit.co/3b219c37933134fecb1df310715456cf"
+            method="POST"
+          >
+            <!-- spam guards: hashed endpoint (email not in source), honeypot, captcha -->
+            <input
+              type="text"
+              name="_honey"
+              style="display: none"
+              tabindex="-1"
+              autocomplete="off"
+              aria-hidden="true"
+            />
+            <input type="hidden" name="_captcha" value="true" />
+            <input
+              type="hidden"
+              name="_subject"
+              value="New message from your portfolio"
+            />
+            <div>
+              <label for="name">
+                <h4>Name:</h4>
+              </label>
+              <input type="text" name="name" id="name" required />
+            </div>
+            <br />
+            <div>
+              <label for="email">
+                <h4>Email:</h4>
+              </label>
+              <input type="email" name="email" id="email" required />
+            </div>
+            <br />
+
+            <div>
+              <label for="message">
+                <h4>Message:</h4>
+              </label>
+              <textarea
+                name="message"
+                rows="12"
+                id="message"
+                required
+              ></textarea>
+            </div>
+            <br />
+            <br />
+            <div style="text-align: center">
+              <button type="submit">SUBMIT</button>
+            </div>
+          </form>
+        </div>
+        <!-- social links -->
+        <div class="contact-links">
+          <a
+            href="https://github.com/jacksongski"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="ti"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+                /></svg
+            ></i>
+            <h4>GitHub</h4> </a
+          ><a
+            href="https://www.linkedin.com/in/gliski/"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="ti"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M8 11v5" />
+                <path d="M8 8v.01" />
+                <path d="M12 16v-5" />
+                <path d="M16 16v-3a2 2 0 1 0 -4 0" />
+                <path
+                  d="M3 7a4 4 0 0 1 4 -4h10a4 4 0 0 1 4 4v10a4 4 0 0 1 -4 4h-10a4 4 0 0 1 -4 -4l0 -10"
+                /></svg
+            ></i>
+            <h4>LinkedIn</h4> </a
+          ><a href="./assets/resume.pdf" target="_blank" rel="noopener">
+            <i class="ti"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+                <path
+                  d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2"
+                />
+                <path d="M9 17h6" />
+                <path d="M9 13h6" /></svg
+            ></i>
+            <h4>Resume</h4> </a
+          ><a
+            id="emailLink"
+            href="#"
+            data-u="jacksongski"
+            data-d="icloud.com"
+            rel="nofollow"
+          >
+            <i class="ti"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10"
+                />
+                <path d="M3 7l9 6l9 -6" /></svg
+            ></i>
+            <h4>Email</h4>
+          </a>
+        </div>
+      </div>
+
+      <!-- bars -->
+      <div style="margin: 180px 0">
+        <div style="margin: 24px 100%"></div>
+        <div class="bars" style="left: 47%"></div>
+        <div class="bars bar2" style="right: 68%"></div>
+        <div style="margin: 30px 100%"></div>
+
+        <div class="bars bar1" style="right: 62%"></div>
+        <div class="bars" style="left: 57%"></div>
+      </div>
+
+      <div class="footnote">
+        <p>Created by Jackson Glisczinski</p>
+        <a
+          id="srcCode"
+          href="https://github.com/jacksongski/jacksongski.github.io"
+          target="_blank"
+          rel="noopener"
+          >Source Code</a
+        >
+        <a id="egg404" href="./404.html">404</a>
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var reduce = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        var hasIO = "IntersectionObserver" in window;
+
+        /* built at runtime so the address isn't in the page source for scrapers */
+        var mail = document.getElementById("emailLink");
+        if (mail) {
+          var addr =
+            mail.getAttribute("data-u") + "@" + mail.getAttribute("data-d");
+          mail.setAttribute("href", "mailto:" + addr);
         }
-        if (cue) cue.classList.toggle("is-hidden", y > 60);
-        queued = false;
-      };
-      window.addEventListener(
-        "scroll",
-        function () {
-          y = window.scrollY || window.pageYOffset;
-          if (!queued) {
-            queued = true;
-            requestAnimationFrame(onFrame);
+
+        /* Scroll work is batched into one rAF per frame so it can't stutter. */
+        var field = document.querySelector(".bg-bars");
+        var cue = document.querySelector(".scroll-cue");
+        var y = 0,
+          queued = false;
+        var onFrame = function () {
+          if (field && !reduce) {
+            /* bars move at ~9% of scroll speed, capped so the field stays full */
+            var ty = y * 0.09;
+            var cap = window.innerHeight * 0.55;
+            if (ty > cap) ty = cap;
+            field.style.transform = "translate3d(0,-" + ty + "px,0)";
           }
-        },
-        { passive: true }
-      );
-
-      /* One-shot entrance reveals, kept off the scroll thread. */
-      if (hasIO && !reduce) {
-        root.classList.add("reveal-ready");
-        if (cue)
-          setTimeout(function () {
-            cue.classList.add("is-in");
-          }, 1500);
-        var revealer = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (e) {
-              if (!e.isIntersecting) return;
-              e.target.classList.add("is-in");
-              revealer.unobserve(e.target);
-            });
+          if (cue) cue.classList.toggle("is-hidden", y > 60);
+          queued = false;
+        };
+        window.addEventListener(
+          "scroll",
+          function () {
+            y = window.scrollY || window.pageYOffset;
+            if (!queued) {
+              queued = true;
+              requestAnimationFrame(onFrame);
+            }
           },
-          { rootMargin: "0px 0px -10% 0px", threshold: 0.12 }
+          { passive: true },
         );
-        var targets = document.querySelectorAll(
-          ".section-title, .about-main, .skills-group, .exp-card, .contact-form, .contact-links"
+
+        /* One-shot entrance reveals, kept off the scroll thread. */
+        if (hasIO && !reduce) {
+          root.classList.add("reveal-ready");
+          if (cue)
+            setTimeout(function () {
+              cue.classList.add("is-in");
+            }, 1500);
+          var revealer = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                if (!e.isIntersecting) return;
+                e.target.classList.add("is-in");
+                revealer.unobserve(e.target);
+              });
+            },
+            { rootMargin: "0px 0px -10% 0px", threshold: 0.12 },
+          );
+          var targets = document.querySelectorAll(
+            ".section-title, .about-main, .timeline, .skills-group, .exp-card, .contact-form, .contact-links",
+          );
+          targets.forEach(function (el) {
+            el.setAttribute("data-reveal", "");
+            revealer.observe(el);
+          });
+        }
+
+        /* highlight the nav item for whichever section is in view */
+        var nav = Array.prototype.slice.call(
+          document.querySelectorAll("#navbar .navItems"),
         );
-        targets.forEach(function (el) {
-          el.setAttribute("data-reveal", "");
-          revealer.observe(el);
-        });
-      }
+        var ids = ["home", "about", "work", "contact"];
+        if (hasIO && nav.length === ids.length) {
+          var visible = {};
+          var spy = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (e) {
+                visible[e.target.id] = e.isIntersecting;
+              });
+              var active = null;
+              ids.forEach(function (id) {
+                if (visible[id]) active = id;
+              });
+              nav.forEach(function (a, i) {
+                a.classList.toggle("is-active", ids[i] === active);
+              });
+            },
+            { rootMargin: "-40% 0px -55% 0px", threshold: 0 },
+          );
+          ids.forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el) spy.observe(el);
+          });
+        }
+      })();
+    </script>
 
-      /* highlight the nav item for whichever section is in view */
-      var nav = Array.prototype.slice.call(
-        document.querySelectorAll("#navbar .navItems")
-      );
-      var ids = ["home", "about", "work", "contact"];
-      if (hasIO && nav.length === ids.length) {
-        var visible = {};
-        var spy = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (e) {
-              visible[e.target.id] = e.isIntersecting;
-            });
-            var active = null;
-            ids.forEach(function (id) {
-              if (visible[id]) active = id;
-            });
-            nav.forEach(function (a, i) {
-              a.classList.toggle("is-active", ids[i] === active);
-            });
-          },
-          { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
-        );
-        ids.forEach(function (id) {
-          var el = document.getElementById(id);
-          if (el) spy.observe(el);
-        });
-      }
-    })();
-  </script>
-
-  <script src="./cursor.js" defer></script>
-  <script src="./theme.js" defer></script>
-</body>
-
+    <script src="./cursor.js" defer></script>
+    <script src="./theme.js" defer></script>
+  </body>
 </html>
