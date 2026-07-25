@@ -89,9 +89,7 @@
 /* ---------- Themes ---------- */
 :root[data-theme="purple"] { --h: 248; }
 :root[data-theme="blue"]   { --h: 212; }
-:root[data-theme="cyan"]   { --h: 188; }
 :root[data-theme="green"]  { --h: 150; }
-:root[data-theme="amber"]  { --h: 40; }
 :root[data-theme="red"]    { --h: 356; }
 
 /* Multicolor is the exception: several hues at once rather than one. */
@@ -129,6 +127,111 @@
   background: linear-gradient(100deg, transparent 0%, hsl(156 58% 66% / 0.13) 50%, transparent 100%);
 }
 
+/* Miami Vice: neon pink and cyan over a near-black night */
+:root[data-theme="miami"] {
+  --h: 295;
+  --accent: hsl(328 100% 74%);
+  --accent-bright: hsl(328 100% 83%);
+}
+:root[data-theme="miami"] body::before {
+  background:
+    radial-gradient(46% 42% at 84% 4%, hsl(328 92% 60% / 0.18), transparent 60%),
+    radial-gradient(48% 46% at 4% 28%, hsl(190 90% 55% / 0.15), transparent 60%),
+    radial-gradient(44% 44% at 52% 108%, hsl(285 70% 55% / 0.1), transparent 62%),
+    linear-gradient(158deg,
+      hsl(288 30% 5%) 0%,
+      hsl(300 22% 4%) 52%,
+      hsl(255 26% 6%) 100%);
+}
+:root[data-theme="miami"] .bars {
+  background: linear-gradient(100deg, hsl(328 72% 50%), hsl(312 70% 52%));
+}
+:root[data-theme="miami"] .bar1 {
+  background: linear-gradient(100deg, hsl(190 70% 46%), hsl(202 68% 48%));
+}
+:root[data-theme="miami"] .bar2 {
+  background: linear-gradient(100deg, hsl(280 55% 48%), hsl(320 56% 52%));
+}
+:root[data-theme="miami"] .bg-bars span {
+  background: linear-gradient(100deg, transparent 0%, hsl(328 85% 70% / 0.15) 50%, transparent 100%);
+}
+:root[data-theme="miami"] .bg-bars span:nth-child(3n) {
+  background: linear-gradient(100deg, transparent 0%, hsl(190 80% 66% / 0.15) 50%, transparent 100%);
+}
+:root[data-theme="miami"] .bg-bars span:nth-child(3n + 2) {
+  background: linear-gradient(100deg, transparent 0%, hsl(285 65% 68% / 0.13) 50%, transparent 100%);
+}
+
+/* Tropical: teal + cyan water with sun-yellow and coral */
+:root[data-theme="tropical"] {
+  --h: 187;
+  --accent: hsl(184 70% 62%);
+  --accent-bright: hsl(184 74% 74%);
+}
+:root[data-theme="tropical"] body::before {
+  background:
+    radial-gradient(46% 42% at 84% 4%, hsl(184 78% 50% / 0.2), transparent 60%),
+    radial-gradient(48% 46% at 4% 28%, hsl(45 88% 62% / 0.14), transparent 60%),
+    radial-gradient(44% 44% at 52% 108%, hsl(19 90% 66% / 0.13), transparent 62%),
+    linear-gradient(158deg,
+      hsl(188 42% 9%) 0%,
+      hsl(180 40% 10%) 52%,
+      hsl(160 32% 11%) 100%);
+}
+:root[data-theme="tropical"] .bars {
+  background: linear-gradient(100deg, hsl(186 88% 30%), hsl(184 78% 40%));
+}
+:root[data-theme="tropical"] .bar1 {
+  background: linear-gradient(100deg, hsl(128 30% 54%), hsl(140 30% 50%));
+}
+:root[data-theme="tropical"] .bar2 {
+  background: linear-gradient(100deg, hsl(45 82% 56%), hsl(22 85% 62%));
+}
+:root[data-theme="tropical"] .bg-bars span {
+  background: linear-gradient(100deg, transparent 0%, hsl(184 78% 60% / 0.15) 50%, transparent 100%);
+}
+:root[data-theme="tropical"] .bg-bars span:nth-child(3n) {
+  background: linear-gradient(100deg, transparent 0%, hsl(45 85% 64% / 0.14) 50%, transparent 100%);
+}
+:root[data-theme="tropical"] .bg-bars span:nth-child(3n + 2) {
+  background: linear-gradient(100deg, transparent 0%, hsl(19 88% 66% / 0.14) 50%, transparent 100%);
+}
+
+/* Savanna: warm earth — clay, olive, and khaki over a dark tan night */
+:root[data-theme="savanna"] {
+  --h: 46;
+  --accent: hsl(22 74% 73%);
+  --accent-bright: hsl(28 78% 81%);
+}
+:root[data-theme="savanna"] body::before {
+  background:
+    radial-gradient(46% 42% at 84% 4%, hsl(22 78% 60% / 0.2), transparent 60%),
+    radial-gradient(48% 46% at 4% 28%, hsl(74 32% 52% / 0.15), transparent 60%),
+    radial-gradient(44% 44% at 52% 108%, hsl(40 62% 66% / 0.12), transparent 62%),
+    linear-gradient(158deg,
+      hsl(46 26% 9%) 0%,
+      hsl(60 22% 9%) 52%,
+      hsl(28 28% 10%) 100%);
+}
+:root[data-theme="savanna"] .bars {
+  background: linear-gradient(100deg, hsl(22 64% 52%), hsl(32 62% 55%));
+}
+:root[data-theme="savanna"] .bar1 {
+  background: linear-gradient(100deg, hsl(74 28% 48%), hsl(84 28% 44%));
+}
+:root[data-theme="savanna"] .bar2 {
+  background: linear-gradient(100deg, hsl(42 40% 46%), hsl(36 42% 48%));
+}
+:root[data-theme="savanna"] .bg-bars span {
+  background: linear-gradient(100deg, transparent 0%, hsl(40 62% 72% / 0.14) 50%, transparent 100%);
+}
+:root[data-theme="savanna"] .bg-bars span:nth-child(3n) {
+  background: linear-gradient(100deg, transparent 0%, hsl(74 32% 62% / 0.13) 50%, transparent 100%);
+}
+:root[data-theme="savanna"] .bg-bars span:nth-child(3n + 2) {
+  background: linear-gradient(100deg, transparent 0%, hsl(22 70% 70% / 0.14) 50%, transparent 100%);
+}
+
 /* ---------- Theme picker (built by theme.js) ---------- */
 .theme-picker {
   position: absolute;
@@ -147,31 +250,50 @@
   color: var(--text-mute);
   text-transform: uppercase;
 }
-/* mobile only */
+/* mobile only: an "Appearance" pill with a live color dot */
 .theme-toggle {
   display: none;
-  width: 16px;
-  height: 16px;
-  padding: 0;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  background: var(--tsw, #cdcfff);
+  align-items: center;
+  gap: 7px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: hsl(var(--h) 24% 18% / 0.6);
+  -webkit-backdrop-filter: blur(14px) saturate(150%);
+  backdrop-filter: blur(14px) saturate(150%);
+  color: var(--text-soft);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
   cursor: pointer;
-  transition: transform var(--dur-1) var(--ease);
+  transition: transform var(--dur-1) var(--ease),
+    border-color var(--dur-1) var(--ease);
+}
+.theme-toggle::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: var(--tsw, #cdcfff);
+}
+.theme-toggle::after {
+  content: "Appearance";
 }
 .theme-toggle:hover {
-  transform: scale(1.12);
+  border-color: var(--accent);
 }
-.theme-toggle.tog-multi {
+.theme-toggle.tog-multi::before {
   background: conic-gradient(
-    from 0deg,
-    #cdcfff,
-    #a5c8ff,
+    from 200deg,
+    #b3a6f2,
+    #97c4ff,
     #8fe3ea,
     #9fe6c4,
-    #f2d79b,
-    #ffb0b8,
-    #cdcfff
+    #b3a6f2
   );
 }
 .theme-swatches {
@@ -198,15 +320,23 @@
 }
 .theme-swatch.sw-multi {
   background: conic-gradient(
-    from 0deg,
-    #cdcfff,
-    #a5c8ff,
+    from 200deg,
+    #b3a6f2,
+    #97c4ff,
     #8fe3ea,
     #9fe6c4,
-    #f2d79b,
-    #ffb0b8,
-    #cdcfff
+    #b3a6f2
   );
+}
+/* multicolor themes get a gradient swatch that samples their palette */
+.theme-swatch.sw-miami {
+  background: linear-gradient(135deg, #ff5db1 0%, #b64ce0 46%, #2ad4e0 100%);
+}
+.theme-swatch.sw-tropical {
+  background: linear-gradient(135deg, #23ced9 0%, #a1cca6 36%, #f9d779 68%, #fca47c 100%);
+}
+.theme-swatch.sw-savanna {
+  background: linear-gradient(135deg, #ffeed6 0%, #a5af79 40%, #827148 70%, #e8a07c 100%);
 }
 
 *,
@@ -241,10 +371,12 @@ body::before {
   z-index: -3;
   pointer-events: none;
   background:
-    radial-gradient(46% 40% at 82% 6%, hsl(var(--h) 42% 60% / 0.11), transparent 62%),
-    radial-gradient(42% 36% at 8% 34%, hsl(var(--h) 30% 51% / 0.06), transparent 60%),
+    radial-gradient(62% 56% at 72% 8%, hsl(var(--h) 52% 64% / 0.24), transparent 66%),
+    radial-gradient(58% 52% at 14% 40%, hsl(var(--h) 42% 56% / 0.16), transparent 64%),
     var(--bg-grad);
   transform: translateZ(0); /* keeps it off the scroll repaint path */
+  /* slow idle drift so the backdrop is never fully still */
+  animation: bgDrift 22s ease-in-out infinite alternate;
 }
 body::after {
   content: "";
@@ -572,6 +704,8 @@ section,
 .bg-bars span:nth-child(18) { top: 90%; left: 56%; width: 44%; height: 13px; opacity: 0.26; --sx: 13px; --sdur: 30s; --sdelay: -9s;  }
 .bg-bars span:nth-child(19) { top: 94%; left: -4%; width: 36%; height: 12px; opacity: 0.22; --sx: 10px; --sdur: 23s; --sdelay: -3s;  }
 .bg-bars span:nth-child(20) { top: 98%; left: 62%; width: 40%; height: 15px; opacity: 0.36; --sx: 12px; --sdur: 26s; --sdelay: -11s; }
+/* alternate the float height and tilt so the field doesn't move in lockstep */
+.bg-bars span:nth-child(even) { --sy: 30px; --sr: -1.1deg; }
 
 /* ---------- Hero ---------- */
 #home {
@@ -761,7 +895,14 @@ section,
   position: absolute;
   inset: 6px;
   border-radius: 12px;
-  background: linear-gradient(160deg, rgba(48, 48, 94, 0.34), rgba(28, 26, 48, 0.5));
+  overflow: hidden;
+  /* built from the hue token, so it recolors with the theme */
+  background: linear-gradient(
+    155deg,
+    hsl(var(--h) 60% 58% / 0.22),
+    hsl(var(--h) 50% 24% / 0.3) 48%,
+    hsl(var(--h) 45% 8% / 0.44)
+  );
   transition: opacity var(--dur-3) var(--ease);
 }
 .about-photo:hover .overlay {
@@ -818,12 +959,14 @@ section,
   cursor: default;
   user-select: none;
   transition: color var(--dur-1) var(--ease),
-    border-color var(--dur-1) var(--ease), background var(--dur-1) var(--ease);
+    border-color var(--dur-1) var(--ease), background var(--dur-1) var(--ease),
+    transform var(--dur-1) var(--ease);
 }
 .skill-tag:hover {
   color: var(--text);
   border-color: var(--line-strong);
   background: color-mix(in srgb, var(--accent) 9%, transparent);
+  transform: translateY(-2px);
 }
 
 /* ---------- Work ---------- */
@@ -971,6 +1114,11 @@ a.exp-card:focus-visible {
   color: var(--ink);
   border-color: transparent;
   gap: 10px;
+}
+/* external cards use the new-tab glyph in place of the arrow */
+.work-card-link .wcl-ext {
+  width: 15px;
+  height: 15px;
 }
 
 /* ---------- Contact ---------- */
@@ -1162,6 +1310,18 @@ textarea {
     opacity: 0.8;
   }
 }
+/* idle backdrop drift: gentle enough that the min scale always covers the viewport */
+@keyframes bgDrift {
+  0% {
+    transform: translate3d(-7%, -4%, 0) scale(1.2);
+  }
+  50% {
+    transform: translate3d(4%, 3%, 0) scale(1.32);
+  }
+  100% {
+    transform: translate3d(7%, 5%, 0) scale(1.2);
+  }
+}
 /* button sweep */
 @keyframes btnShine {
   0% {
@@ -1173,22 +1333,27 @@ textarea {
     opacity: 0;
   }
 }
-/* bar breathe */
+/* bar breathe + a subtle float */
 @keyframes barPulse {
   from {
-    transform: scaleX(0.965);
+    transform: translateY(2.5px) scaleX(0.965);
   }
   to {
-    transform: scaleX(1.035);
+    transform: translateY(-2.5px) scaleX(1.04);
   }
 }
-/* ambient bar sway */
+/* ambient bar drift: sway on x, float on y, a hair of tilt, and a slow breathe */
 @keyframes barShift {
-  from {
-    transform: translate3d(calc(var(--sx, 10px) * -1), 0, 0);
+  0% {
+    transform: translate3d(calc(var(--sx, 10px) * -1), var(--sy, 22px), 0)
+      rotate(var(--sr, 0.9deg)) scaleX(0.96);
   }
-  to {
-    transform: translate3d(var(--sx, 10px), 0, 0);
+  50% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scaleX(1.03);
+  }
+  100% {
+    transform: translate3d(var(--sx, 10px), calc(var(--sy, 22px) * -1), 0)
+      rotate(calc(var(--sr, 0.9deg) * -1)) scaleX(0.96);
   }
 }
 /* scroll cue dot */
@@ -1417,18 +1582,19 @@ html.cursor-down .cursor-dot {
   }
   /* picker collapses to a single toggle; swatches become a popover */
   .theme-picker {
-    top: 50%;
+    top: calc(100% + 10px);
     bottom: auto;
     left: auto;
     right: 12px;
-    transform: translateY(-50%);
+    transform: none;
     gap: 0;
+    align-items: flex-end;
   }
   .theme-picker-label {
     display: none;
   }
   .theme-toggle {
-    display: block;
+    display: inline-flex;
   }
   .theme-swatches {
     display: none;
@@ -1863,6 +2029,8 @@ html.cursor-down .cursor-dot {
   background: var(--pd-panel);
   border: 1px solid var(--pd-border);
   border-radius: 16px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
   overflow: hidden;
   transition: border-color 0.25s ease-out, transform 0.25s ease-out,
     box-shadow 0.25s ease-out;
@@ -1876,6 +2044,7 @@ html.cursor-down .cursor-dot {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 40px;
 }
 .pd-shot-body {
   display: flex;
