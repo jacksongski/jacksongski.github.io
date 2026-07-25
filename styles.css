@@ -909,6 +909,186 @@ section,
   opacity: 0;
 }
 
+/* ---------- About timeline ---------- */
+.timeline {
+  position: relative;
+  list-style: none;
+  margin: var(--s-8) 0 0;
+  padding: 0;
+}
+/* main line, dissolved at both ends */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--accent) 42%, transparent);
+  -webkit-mask: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 26px,
+    #000 calc(100% - 54px),
+    transparent 100%
+  );
+  mask: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 26px,
+    #000 calc(100% - 54px),
+    transparent 100%
+  );
+}
+.tl-item {
+  position: relative;
+  padding: 0 0 var(--s-6) 40px;
+}
+.tl-item:last-child {
+  padding-bottom: 0;
+}
+.tl-dot {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 10%, transparent);
+}
+.tl-item:last-child .tl-dot {
+  background: var(--accent);
+  animation: tlPulse 2.4s ease-out infinite;
+}
+.tl-date {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.tl-title {
+  display: block;
+  margin-top: 3px;
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.tl-role {
+  display: block;
+  margin-top: 1px;
+  font-size: 0.92rem;
+  color: var(--text-soft);
+}
+.tl-loc {
+  display: block;
+  margin-top: 3px;
+  font-size: 0.8rem;
+  color: var(--text-mute);
+}
+/* nested rotations under the program */
+.tl-sub {
+  position: relative;
+  list-style: none;
+  margin: var(--s-4) 0 var(--s-2);
+  padding: 0;
+}
+.tl-subitem {
+  position: relative;
+  padding: 0 0 var(--s-4) 26px;
+}
+.tl-subitem:last-child {
+  padding-bottom: 0;
+}
+.tl-subitem::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 9px;
+  height: 100%;
+  width: 2px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--accent) 28%, transparent);
+}
+.tl-subitem:last-child::before {
+  display: none;
+}
+.tl-subdot {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid color-mix(in srgb, var(--accent) 65%, transparent);
+}
+.tl-subdate {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--accent) 85%, transparent);
+}
+.tl-subrole {
+  display: block;
+  margin-top: 1px;
+  font-size: 0.86rem;
+  color: var(--text-soft);
+}
+@keyframes tlPulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 40%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 9px color-mix(in srgb, var(--accent) 0%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent);
+  }
+}
+/* reveal: stops slide in, dots pop, line fades in — gated so no-JS/reduced-motion stays visible */
+.reveal-ready .timeline[data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+.reveal-ready .timeline::before {
+  opacity: 0;
+  transition: opacity 0.7s var(--ease-out);
+}
+.reveal-ready .timeline.is-in::before {
+  opacity: 1;
+}
+.reveal-ready .timeline .tl-item,
+.reveal-ready .timeline .tl-subitem {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 0.1s + 0.1s);
+}
+.reveal-ready .timeline.is-in .tl-item,
+.reveal-ready .timeline.is-in .tl-subitem {
+  opacity: 1;
+  transform: none;
+}
+.reveal-ready .timeline .tl-dot,
+.reveal-ready .timeline .tl-subdot {
+  transform: scale(0);
+  transition: transform 0.45s var(--ease-out);
+  transition-delay: calc(var(--i, 0) * 0.1s + 0.14s);
+}
+.reveal-ready .timeline.is-in .tl-dot,
+.reveal-ready .timeline.is-in .tl-subdot {
+  transform: scale(1);
+}
+
 /* ---------- Skills ---------- */
 .skills {
   margin-top: var(--s-9);
@@ -1436,65 +1616,7 @@ textarea {
   transform: translateY(10px);
 }
 
-/* ---------- Custom cursor (see cursor.js) ---------- */
-html.cursor-on,
-html.cursor-on * {
-  cursor: none !important;
-}
-/* keep the caret in inputs */
-html.cursor-on input,
-html.cursor-on textarea,
-html.cursor-on select {
-  cursor: auto !important;
-}
-.cursor-dot,
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 9999;
-  will-change: transform;
-}
-html.cursor-active .cursor-dot,
-html.cursor-active .cursor-ring {
-  opacity: 1;
-}
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  transition: opacity 0.25s var(--ease), width 0.15s var(--ease),
-    height 0.15s var(--ease);
-}
-.cursor-ring {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
-  transition: opacity 0.25s var(--ease), width 0.22s var(--ease),
-    height 0.22s var(--ease), background 0.22s var(--ease),
-    border-color 0.22s var(--ease);
-}
-/* kept obvious on purpose so it reads as "you can click this" */
-html.cursor-hovering .cursor-ring {
-  width: 50px;
-  height: 50px;
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
-  border-color: var(--accent);
-  box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 40%, transparent);
-}
-html.cursor-hovering .cursor-dot {
-  width: 8px;
-  height: 8px;
-}
-html.cursor-down .cursor-dot {
-  width: 11px;
-  height: 11px;
-}
-/* static burst on click */
+/* ---------- Click burst (see cursor.js) ---------- */
 .cursor-buzz {
   position: fixed;
   width: 88px;
